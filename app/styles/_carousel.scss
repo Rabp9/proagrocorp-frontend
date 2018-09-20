@@ -1,0 +1,90 @@
+.carousel {
+    @media (min-width: $screen-sm-min) {
+        height: -webkit-calc(90vh - #{$navbar-height});
+        height:    -moz-calc(90vh - #{$navbar-height});
+        height:         calc(90vh - #{$navbar-height});
+
+        min-height: 160px;
+    }
+    @media (max-width: $screen-xs-max) {
+        height: 160px;
+    }
+    .item {
+        @extend .carousel;
+    }
+    .active {
+        @extend .carousel;
+    }
+}
+
+.carousel-inner, .carousel-inner img, div.text-center {
+    @media (min-width: $screen-sm-min) {
+        height: 100%;
+        min-height: 200px;
+    }
+    @media (max-width: $screen-xs-max) {
+        height: 100%;
+    }
+}
+
+.carousel-indicators {
+    bottom: $carousel-indicators-bottom;
+    li, .active {
+        width:  $carousel-indicators-size;
+        height: $carousel-indicators-size;
+        margin: $carousel-indicators-size / 2;
+        border-color: $color-default;
+        border-width: 2px;
+    };
+    .active {
+        background-color: $color-default;
+    }
+}
+
+.carousel-caption {
+    /*background: rgba($color-default, .8);*/
+    left: 55%;
+    right: 10%;
+    top: 5%;
+    bottom: 40%;
+    text-align: left;
+    padding: 10px;
+    h1 {
+        @media (max-width: $screen-xs-max) {
+            font-size: 100% !important;
+        }
+    }
+    p {
+        @media (max-width: $screen-xs-max) {
+            font-size: 75% !important;
+        }
+    }
+}
+
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            opacity: 0;
+            -webkit-transition-property: opacity;
+            -moz-transition-property: opacity;
+            -o-transition-property: opacity;
+            transition-property: opacity;
+        }
+        .active {
+            opacity: 1;
+            transition-property: opacity;
+            &.left, &.right {
+                left: 0;
+                opacity: 0;
+                z-index: 1;
+                display: none;
+            }
+        }
+        .next.left, .prev.right {
+            opacity: 1;
+        }
+    }
+    .carousel-control {
+        z-index: 2;
+    }
+}
