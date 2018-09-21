@@ -1,8 +1,30 @@
 .top-menu {
-    li {
-        a {
-            padding-bottom: 5px;
-            padding-top: 5px;
+    ul li a {
+        padding-bottom: 5px;
+        padding-top: 5px;
+        color: $color-white;
+        &:hover {
+            background: none;
+            color: $color-secondary;
         }
     }
+}
+
+.menu-principal {
+    ul li a {
+        font-weight: bold;
+        color: $color-primary !important;
+    }
+}
+
+.navbar-brand {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    img {
+        width: 100px;
+    }
+}
+
+.header {
+    background-color: $color-default;
 }
