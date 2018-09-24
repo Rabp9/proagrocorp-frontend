@@ -1,23 +1,23 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div uib-carousel interval="myInterval" no-wrap="noWrapSlides" active="0">
+    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slides.indexOf(slide)">
+        <picture picturefill>
+            <source media='(max-width: 767px)' ng-attr-srcset="{{ getSlideSrc(slide, '_small') }}">
+            <source media='(min-width: 767px)' ng-attr-srcset="{{ getSlideSrc(slide, '_large') }}">
+            <img class="img-slider" ng-src="{{ getSlideSrc(slide, '_large') }}">
+        </picture>
+    </div>
 </div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+<section>
+    <div class="container">
+        <picture picturefill>
+            <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_quienes_somos, '_small') }}">
+            <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_quienes_somos, '_large') }}">
+            <img ng-show="{{ infos.bg_quienes_somos !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_quienes_somos, '_large') }}">
+        </picture>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h3 style="text-align: center;">Global Agro, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et pellentesque risus, bibendum commodo ligula. Ut vitae elit massa.</h3>
+            </div>
+        </div>
+    </div>
+</section>

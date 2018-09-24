@@ -11,6 +11,7 @@
 }
 
 .menu-principal {
+    border-radius: 0px;
     ul li a {
         font-weight: bold;
         color: $color-primary !important;
@@ -27,4 +28,12 @@
 
 .header {
     background-color: $color-default;
+}
+
+img.bg {
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
 }
