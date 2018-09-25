@@ -1,18 +1,23 @@
-<div uib-carousel interval="myInterval" no-wrap="noWrapSlides" active="0">
+<div uib-carousel class="carousel-fade" interval="myInterval" no-wrap="noWrapSlides" active="0">
     <div uib-slide ng-repeat="slide in slides track by slide.id" index="slides.indexOf(slide)">
         <picture picturefill>
             <source media='(max-width: 767px)' ng-attr-srcset="{{ getSlideSrc(slide, '_small') }}">
             <source media='(min-width: 767px)' ng-attr-srcset="{{ getSlideSrc(slide, '_large') }}">
-            <img class="img-slider" ng-src="{{ getSlideSrc(slide, '_large') }}">
+            <img class="img-slider" ng-src="{{slide.image}}">
         </picture>
     </div>
 </div>
-<section>
-    <div class="container">
+<div class="dv-separator">
+</div>
+<section 
+    when-visible="animateElementInFadeIn"
+    when-not-visible="animateElementOutFadeIn" class="not-visible">
+    <div class="container with-bg">
         <picture picturefill>
-            <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_quienes_somos, '_small') }}">
-            <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_quienes_somos, '_large') }}">
-            <img ng-show="{{ infos.bg_quienes_somos !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_quienes_somos, '_large') }}">
+            <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
+            <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
+            <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
+            <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=center">
         </picture>
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
@@ -21,3 +26,59 @@
         </div>
     </div>
 </section>
+<div class="dv-separator">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 with-bg linea-productos not-visible"
+            when-visible="animateElementInZoomIn"
+            when-not-visible="animateElementOutZoomIn"
+            delay-percent="0.50">
+            <picture picturefill>
+                <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
+                <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
+                <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
+                <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=east">
+            </picture>
+            <h3 style="text-align: center;">LÍNEA DE PRODUCTO 1</h3>
+            <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="col-sm-6 with-bg linea-productos not-visible"
+            when-visible="animateElementInZoomIn"
+            when-not-visible="animateElementOutZoomIn">
+            <picture picturefill>
+                <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
+                <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
+                <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
+                <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=west">
+            </picture>
+            <h3 style="text-align: center;">LÍNEA DE PRODUCTO 2</h3>
+            <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="col-sm-12 with-bg linea-productos not-visible"
+            when-visible="animateElementInZoomIn"
+            when-not-visible="animateElementOutZoomIn"
+            delay-percent="0.20">
+            <picture picturefill>
+                <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
+                <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
+                <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
+                <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=north">
+            </picture>
+            <h3 style="text-align: center;">LÍNEA DE PRODUCTO 3</h3>
+            <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+</div>
+<div class="dv-separator">
+</div>
+<div class="container">
+    <slick dots="true" infinite="true" speed="300" slides-to-show="5" touch-move="true" slides-to-scroll="1">
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz1.png"/></div></div>
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz2.png"/></div></div>
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz3.png"/></div></div>
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz4.png"/></div></div>
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz5.png"/></div></div>
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz6.png"/></div></div>
+    </slick>
+</div>

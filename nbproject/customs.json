@@ -1,8 +1,13 @@
 {
-    "elements": {},
+    "elements": {
+        "slick": {}
+    },
     "attributes": {
         "uib-carousel": {
             "context": "div"
+        },
+        "when-visible": {
+            "context": "section"
         },
         "picturefill": {
             "context": "picture"

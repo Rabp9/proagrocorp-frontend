@@ -15,7 +15,11 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'ui.bootstrap',
+    'ngPicturefill',
+    'slick',
+    'angular-scroll-animate'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
     var mainState = {
