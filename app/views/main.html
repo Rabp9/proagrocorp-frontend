@@ -31,8 +31,8 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 with-bg linea-productos not-visible"
-            when-visible="animateElementInZoomIn"
-            when-not-visible="animateElementOutZoomIn"
+            when-visible="animateElementInFadeIn"
+            when-not-visible="animateElementOutFadeIn"
             delay-percent="0.50">
             <picture picturefill>
                 <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
@@ -44,8 +44,8 @@
             <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="col-sm-6 with-bg linea-productos not-visible"
-            when-visible="animateElementInZoomIn"
-            when-not-visible="animateElementOutZoomIn">
+            when-visible="animateElementInFadeIn"
+            when-not-visible="animateElementOutFadeIn">
             <picture picturefill>
                 <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
                 <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
@@ -56,8 +56,8 @@
             <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="col-sm-12 with-bg linea-productos not-visible"
-            when-visible="animateElementInZoomIn"
-            when-not-visible="animateElementOutZoomIn"
+            when-visible="animateElementInFadeIn"
+            when-not-visible="animateElementOutFadeIn"
             delay-percent="0.20">
             <picture picturefill>
                 <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
@@ -81,4 +81,7 @@
         <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz5.png"/></div></div>
         <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz6.png"/></div></div>
     </slick>
+</div>
+<div class="container" style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Kq8Zr-I62NI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>

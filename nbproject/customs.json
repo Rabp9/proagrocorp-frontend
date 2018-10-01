@@ -6,6 +6,9 @@
         "uib-carousel": {
             "context": "div"
         },
+        "allow": {
+            "context": "iframe"
+        },
         "when-visible": {
             "context": "section"
         },
