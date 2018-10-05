@@ -31,6 +31,15 @@ angular
         title: 'Home'
     };
     
+    var mainState = {
+        name: 'main',
+        url: '/',
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl',
+        controllerAs: 'main',
+        title: 'Home'
+    };
+    
     $stateProvider.state(mainState);
     $urlRouterProvider.when('', '/');
 });
