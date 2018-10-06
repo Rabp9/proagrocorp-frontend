@@ -34,3 +34,6 @@ angular
     $stateProvider.state(mainState);
     $urlRouterProvider.when('', '/');
 });
+
+angular.module("uib/template/carousel/carousel.html", []).run(["$templateCache", function($templateCache) {
+}]);
