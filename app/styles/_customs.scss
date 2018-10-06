@@ -51,6 +51,20 @@ img.bg {
 }
 
 .linea-productos {
+    a {
+        color: $color-white;
+    }
+    &.lp1 {
+        padding-left: 0px;
+    }
+    &.lp2 {
+        padding-right: 0px;
+    }
+    &.lp3 {
+        padding-top: 30px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
     .resumen {
         text-align: center;
         -webkit-transition: opacity 0.5s ease-in-out;
@@ -82,7 +96,7 @@ img.bg {
 }
 
 .dv-separator {
-    height: 20px;
+    height: 40px;
 }
 
 .not-visible {
