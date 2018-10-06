@@ -9,10 +9,72 @@
 </div>
 <div class="dv-separator">
 </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 linea-productos not-visible lp1"
+            when-visible="animateElementInFadeIn"
+            when-not-visible="animateElementOutFadeIn"
+            delay-percent="0.80">
+            <div class="with-bg lp1">
+                <picture picturefill>
+                    <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
+                    <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
+                    <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
+                    <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=east">
+                </picture>
+                <h3 style="text-align: center;"><a ng-href="#/">LÍNEA DE PRODUCTO 1</a></h3>
+                <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="col-sm-6 linea-productos not-visible lp2"
+            when-visible="animateElementInFadeIn"
+            when-not-visible="animateElementOutFadeIn">
+            <div class="with-bg lp2">
+                <picture picturefill>
+                    <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
+                    <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
+                    <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
+                    <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=west">
+                </picture>
+                <h3 style="text-align: center;">LÍNEA DE PRODUCTO 2</h3>
+                <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="col-sm-12 linea-productos not-visible lp3"
+            when-visible="animateElementInFadeIn"
+            when-not-visible="animateElementOutFadeIn"
+            delay-percent="0.90">
+            <div class="with-bg lp3">
+                <picture picturefill>
+                    <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
+                    <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
+                    <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
+                    <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=north">
+                </picture>
+                <h3 style="text-align: center;">LÍNEA DE PRODUCTO 3</h3>
+                <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dv-separator">
+</div>
+<div class="container-fluid">
+    <slick dots="true" infinite="true" speed="300" slides-to-show="5" touch-move="true" slides-to-scroll="1">
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz1.png"/></div></div>
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz2.png"/></div></div>
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz3.png"/></div></div>
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz4.png"/></div></div>
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz5.png"/></div></div>
+        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz6.png"/></div></div>
+    </slick>
+</div>
+<div class="dv-separator">
+</div>
 <section 
     when-visible="animateElementInFadeIn"
     when-not-visible="animateElementOutFadeIn" class="not-visible">
-    <div class="container with-bg">
+    <div class="container-fluid with-bg">
         <picture picturefill>
             <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
             <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
@@ -26,62 +88,6 @@
         </div>
     </div>
 </section>
-<div class="dv-separator">
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 with-bg linea-productos not-visible"
-            when-visible="animateElementInFadeIn"
-            when-not-visible="animateElementOutFadeIn"
-            delay-percent="0.80">
-            <picture picturefill>
-                <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
-                <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
-                <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
-                <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=east">
-            </picture>
-            <h3 style="text-align: center;">LÍNEA DE PRODUCTO 1</h3>
-            <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="col-sm-6 with-bg linea-productos not-visible"
-            when-visible="animateElementInFadeIn"
-            when-not-visible="animateElementOutFadeIn">
-            <picture picturefill>
-                <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
-                <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
-                <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
-                <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=west">
-            </picture>
-            <h3 style="text-align: center;">LÍNEA DE PRODUCTO 2</h3>
-            <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="col-sm-12 with-bg linea-productos not-visible"
-            when-visible="animateElementInFadeIn"
-            when-not-visible="animateElementOutFadeIn"
-            delay-percent="0.90">
-            <picture picturefill>
-                <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
-                <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
-                <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
-                <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=north">
-            </picture>
-            <h3 style="text-align: center;">LÍNEA DE PRODUCTO 3</h3>
-            <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-    </div>
-</div>
-<div class="dv-separator">
-</div>
-<div class="container">
-    <slick dots="true" infinite="true" speed="300" slides-to-show="5" touch-move="true" slides-to-scroll="1">
-        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz1.png"/></div></div>
-        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz2.png"/></div></div>
-        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz3.png"/></div></div>
-        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz4.png"/></div></div>
-        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz5.png"/></div></div>
-        <div><div class="image"><img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz6.png"/></div></div>
-    </slick>
-</div>
 <div class="dv-separator">
 </div>
 <div class="container" style="text-align: center;">
