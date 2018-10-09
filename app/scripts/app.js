@@ -53,8 +53,8 @@ angular
         $q.all([
              infosService.getMany(search).$promise,
              linksService.getHeader().$promise,
-             linksService.getFooter().$promise/*,
-             noticiasservice.getSome({amount: 3}).$promise*/
+             linksService.getFooter().$promise
+             //noticiasservice.getSome({amount: 3}).$promise
         ]).then(function(data) {
             $rootScope.infosIndex = data[0].info;
             $rootScope.linksHeader = data[1].linksHeader;

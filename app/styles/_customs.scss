@@ -3,7 +3,7 @@
         padding-bottom: 5px;
         padding-top: 5px;
         color: $color-white;
-        &:hover {
+        &:hover, &:active, &:visited, &:focus {
             background: none;
             color: $color-secondary;
         }
@@ -104,15 +104,25 @@ img.bg {
 }
 
 .footer {
-    background-color: $color-default;
+    hr {
+        height: 2px;
+        border: 2px solid $color-default;
+        background-color: $color-default;
+        margin: 0px;
+    }
+    background-color: $color-white;
     .first-footer {
         .link {
             padding: 30px;
-            text-align: center;
             a {
                 font-weight: bold;
-                color: $color-secondary;
+                color: $color-third;
             }
         }
+    }
+    .copyright {
+        color: $color-white;
+        padding: 20px;
+        background-color: $color-default;
     }
 }

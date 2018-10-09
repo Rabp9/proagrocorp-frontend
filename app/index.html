@@ -26,9 +26,7 @@
     <div class="header">
         <div class="container top-menu">
             <ul class="nav navbar-nav pull-right">
-                <li><a ng-href="#/">Facebook</a></li>
-                <li><a ng-href="#/">Twitter</a></li>
-                <li><a ng-href="#/">Email</a></li>
+                <li ng-repeat="linkHeader in linksHeader"><a target="_blank" ng-href="{{ linkHeader.url }}">{{ linkHeader.descripcion }}</a></li>
                 <li>
                     <form class="form-group-sm form-inline">
                         <div class="input-group">
@@ -75,18 +73,42 @@
     </div>
 
     <div class="footer">
-        <div class="container">
-            <div class="row first-footer">
-                <div class="col-sm-3 link"><a href="#">Link 1</a></div>
-                <div class="col-sm-3 link"><a href="#">Link 2</a></div>
-                <div class="col-sm-3 link"><a href="#">Link 3</a></div>
-                <div class="col-sm-3 link"><a href="#">Link 4</a></div>
-            </div>
-        </div>
         <hr>
         <div class="container">
-            <p class="text-center">copyright</p>
+            <div class="row first-footer">
+                <div class="col-sm-4 link">
+                    <h3>Nosotros</h3>
+                    <p>lorem ipsum</p>
+                    <p>lorem ipsum</p>
+                    <p>lorem ipsum</p>
+                </div>
+                <div class="col-sm-4 link">
+                    <h3>Productos</h3>
+                    <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 5</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 link">
+                    <h3>Enlaces Externos</h3>
+                    <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 5</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+        <div class="container-fluid copyright">
+            <p class="text-center">copyright copyright copyright</p>
+        </div>
+        <br>
+        {{ infosIndex | json }}
     </div>
 
 

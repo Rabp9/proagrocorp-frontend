@@ -12,11 +12,11 @@ angular.module('proagrocorpFrontendApp')
     return $resource(envService.getHost() + 'links/:id.json', {}, {
         getHeader: {
             method: 'GET',
-            url: envService.getHost() + 'links/getHeader.json',
+            url: envService.getHost() + 'links/getHeader.json'
         },
         getFooter: {
             method: 'GET',
-            url: envService.getHost() + 'links/getFooter.json',
+            url: envService.getHost() + 'links/getFooter.json'
         }
     });
 });
