@@ -43,7 +43,7 @@ angular
     $stateProvider.state(mainState);
     $urlRouterProvider.when('', '/');
 })
-.run(function($rootScope, /*$state, $window, $sce,*/ envService, infosService, linksService,/*serviciosservice,
+.run(function($rootScope, /*$state, $window, $sce,*/ envService, infosService, linksService, categoriesService, /*serviciosservice,
     noticiasservice,*/ $q) {
     $rootScope.path_location = envService.getHost();
     
@@ -53,12 +53,14 @@ angular
         $q.all([
              infosService.getMany(search).$promise,
              linksService.getHeader().$promise,
-             linksService.getFooter().$promise
+             linksService.getFooter().$promise,
+             categoriesService.get().$promise
              //noticiasservice.getSome({amount: 3}).$promise
         ]).then(function(data) {
             $rootScope.infosIndex = data[0].info;
             $rootScope.linksHeader = data[1].linksHeader;
             $rootScope.linksFooter = data[2].linksFooter;
+            $rootScope.categories = data[3].categories;
             /*$rootScope.servicios_index = data[1].servicios;
             $rootScope.noticias_index = data[2].noticias;*/
         });
