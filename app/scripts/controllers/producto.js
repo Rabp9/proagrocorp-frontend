@@ -10,10 +10,10 @@
 angular.module('proagrocorpFrontendApp')
 .controller('ProductoCtrl', function ($scope, $state, ngProgressFactory, productosService,
     $rootScope) {
+        
     $scope.init = function() {
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
-        $scope.progressbar.complete();
         productosService.get({id: $state.params.id}, function(data) {
             $scope.producto = data.producto;
             var imagen = 'img/productos/' + $scope.producto.portada;

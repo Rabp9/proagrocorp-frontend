@@ -1,1 +1,25 @@
-<p>This is the producto view.</p>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li ng-if="producto.category.parent_categories1.parent_categories2 !== undefined">
+            {{ producto.category.parent_categories1.parent_categories2.descripcion }}
+        </li>
+        <li ng-if="producto.category.parent_categories1 !== undefined">
+            {{ producto.category.parent_categories1.descripcion }}
+        </li>
+        <li>{{ producto.descripcion }}</li>
+    </ol>
+    <div class="row">
+        <div class="col-sm-6">
+            <img class="img-responsive" src="https://picsum.photos/600/300/?image=0">
+        </div>
+        <div class="col-sm-6">
+            <h2>Titulo</h2>
+            <div class="text-justify">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus erat vitae sapien elementum, sit amet bibendum quam accumsan. Vestibulum vel posuere massa, eu dapibus elit. Proin eleifend vehicula diam, nec placerat sem gravida sit amet. Fusce eu dolor libero. Nam sit amet erat sed nisi tincidunt porttitor at in lacus. Morbi sit amet orci a risus pretium pharetra. Sed imperdiet faucibus faucibus. Duis dignissim mi fermentum quam suscipit, nec tincidunt odio viverra. Sed cursus sed ante ut consectetur. Proin dapibus a sem quis dignissim. Ut dictum quam quis massa hendrerit, blandit dignissim ligula ultrices. Maecenas pellentesque in nisl non porta.</p>
+            </div>
+            <a class="btn btn-default"><span class="glyphicon glyphicon-download-alt"></span> Ficha Técnica</a>
+        </div>
+    </div>
+</div>
+<br>
