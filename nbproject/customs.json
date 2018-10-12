@@ -14,6 +14,9 @@
         },
         "picturefill": {
             "context": "picture"
+        },
+        "ui-sref": {
+            "context": "a"
         }
     }
 }

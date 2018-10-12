@@ -19,7 +19,8 @@ angular
     'ui.bootstrap',
     'ngPicturefill',
     'slick',
-    'angular-scroll-animate'
+    'angular-scroll-animate',
+    'ngProgress'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
     var mainState = {
@@ -31,19 +32,44 @@ angular
         title: 'Home'
     };
     
-    var mainState = {
-        name: 'main',
-        url: '/',
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main',
-        title: 'Home'
+    var nosotrosState = {
+        name: 'nosotros',
+        url: '/nosotros',
+        templateUrl: 'views/nosotros.html',
+        controller: 'NosotrosCtrl',
+        controllerAs: 'nosotros',
+        title: 'Nosotros'
+    };
+    
+    var contactoState = {
+        name: 'contacto',
+        url: '/contacto',
+        templateUrl: 'views/contacto.html',
+        controller: 'ContactoCtrl',
+        controllerAs: 'contacto',
+        title: 'Contacto'
+    };
+    
+    var productoState = {
+        name: 'producto',
+        url: '/producto/{id}',
+        templateUrl: 'views/producto.html',
+        controller: 'ProductoCtrl',
+        controllerAs: 'producto',
+        params: {
+            id: {
+                value: '1'
+            }
+        }
     };
     
     $stateProvider.state(mainState);
+    $stateProvider.state(contactoState);
+    $stateProvider.state(nosotrosState);
+    $stateProvider.state(productoState);
     $urlRouterProvider.when('', '/');
 })
-.run(function($rootScope, /*$state, $window, $sce,*/ envService, infosService, linksService, categoriesService, /*serviciosservice,
+.run(function($rootScope, $state, /*$window, $sce,*/ envService, infosService, linksService, categoriesService, /*serviciosservice,
     noticiasservice,*/ $q) {
     $rootScope.path_location = envService.getHost();
     
@@ -65,6 +91,10 @@ angular
             $rootScope.noticias_index = data[2].noticias;*/
         });
     };
+    
+    $rootScope.$on('$stateChangeSuccess', function(event, toParams, fromState, fromParams) {
+        $rootScope.title = $state.current.title;
+    });
     /*
     $('#mmNav a').click(function() {
         $('.dropdown.open').removeClass('open');
@@ -77,10 +107,6 @@ angular
         }
     });
         
-    $rootScope.$on('$stateChangeSuccess', function(event, toParams, fromState, fromParams) {
-        $rootScope.title = $state.current.title;
-    });
-    
     $rootScope.trustAsHtml = function(string) {
         return $sce.trustAsHtml(string);
     };

@@ -126,3 +126,13 @@ img.bg {
         background-color: $color-default;
     }
 }
+
+.nosotros p {
+    text-align: justify;
+}
+
+.slick-list {
+    .image img {
+        margin: 0 auto;
+    }
+}
