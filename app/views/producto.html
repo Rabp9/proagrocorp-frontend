@@ -11,10 +11,21 @@
     </ol>
     <div class="row">
         <div class="col-sm-6">
-            <img class="img-responsive" src="https://picsum.photos/600/300/?image=0">
+            <img class="img-responsive"
+                ez-plus 
+                ezp-model="{thumb:IMGPATH, small:IMGPATH, large:IMGPATH}"
+                ezp-options="{scrollZoom: true, easing: true}"
+                id="zoom_01" 
+                src='https://picsum.photos/600/300/?image=0' 
+                data-zoom-image='https://picsum.photos/2400/1200/?image=0' />
+            
+            <a>Facebook</a>
+            <a>Twitter</a>
         </div>
         <div class="col-sm-6">
             <h2>Titulo</h2>
+            <p>Detalle 1</p>
+            <p>Detalle 2</p>
             <div class="text-justify">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus erat vitae sapien elementum, sit amet bibendum quam accumsan. Vestibulum vel posuere massa, eu dapibus elit. Proin eleifend vehicula diam, nec placerat sem gravida sit amet. Fusce eu dolor libero. Nam sit amet erat sed nisi tincidunt porttitor at in lacus. Morbi sit amet orci a risus pretium pharetra. Sed imperdiet faucibus faucibus. Duis dignissim mi fermentum quam suscipit, nec tincidunt odio viverra. Sed cursus sed ante ut consectetur. Proin dapibus a sem quis dignissim. Ut dictum quam quis massa hendrerit, blandit dignissim ligula ultrices. Maecenas pellentesque in nisl non porta.</p>
             </div>
@@ -23,3 +34,44 @@
     </div>
 </div>
 <br>
+<div class="container">
+    <h3>Productos Relacionados</h3>
+    <slick dots="true" infinite="true" speed="300" slides-to-show="5" touch-move="true">
+        <div>
+            <div class="image">
+                <img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz1.png" alt="Trulli">
+                <h4 class="text-center">Producto 1</h4>
+            </div>
+        </div>
+        <div>
+            <div class="image">
+                <img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz2.png"/>
+                <h4 class="text-center">Producto 2</h4>
+            </div>
+        </div>
+        <div>
+            <div class="image">
+                <img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz3.png"/>
+                <h4 class="text-center">Producto 3</h4>
+            </div>
+        </div>
+        <div>
+            <div class="image">
+                <img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz4.png"/>
+                <h4 class="text-center">Producto 4</h4>
+            </div>
+        </div>
+        <div>
+            <div class="image">
+                <img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz5.png"/>
+                <h4 class="text-center">Producto 5</h4>
+            </div>
+        </div>
+        <div>
+            <div class="image">
+                <img src="http://vasyabigi.github.io/angular-slick/images/lazyfonz6.png"/>
+                <h4 class="text-center">Producto 6</h4>
+            </div>
+        </div>
+    </slick>
+</div>

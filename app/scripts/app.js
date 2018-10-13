@@ -20,7 +20,8 @@ angular
     'ngPicturefill',
     'slick',
     'angular-scroll-animate',
-    'ngProgress'
+    'ngProgress',
+    'ezplus'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
     var mainState = {

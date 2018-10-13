@@ -9,6 +9,9 @@
         "allow": {
             "context": "iframe"
         },
+        "ez-plus": {
+            "context": "img"
+        },
         "when-visible": {
             "context": "section"
         },
