@@ -72,7 +72,7 @@ angular
 })
 .run(function($rootScope, $state, /*$window, $sce,*/ envService, infosService, linksService, categoriesService, /*serviciosservice,
     noticiasservice,*/ $q) {
-    $rootScope.path_location = envService.getHost();
+    $rootScope.pathLocation = envService.getHost();
     
     var search = ['logo', 'descripcion'];
     
