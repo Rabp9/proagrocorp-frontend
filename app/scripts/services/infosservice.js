@@ -13,6 +13,10 @@ angular.module('proagrocorpFrontendApp')
         getMany: {
             method: 'POST',
             url: envService.getHost() + 'infos/getMany.json',
+        },
+        indexAdmin: {
+            method: 'POST',
+            url: envService.getHost() + 'infos/indexAdmin.json',
         }
     });
 });

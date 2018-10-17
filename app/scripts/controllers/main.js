@@ -8,21 +8,23 @@
  * Controller of the proagrocorpFrontendApp
  */
 angular.module('proagrocorpFrontendApp')
-.controller('MainCtrl', function ($scope) {
-    $scope.slides = [
-        {
-            id: 1,
-            image: "https://picsum.photos/600/200/?image=0"
-        },
-        {
-            id: 2,
-            image: "https://picsum.photos/600/200?image=1"
-        },
-        {
-            id: 3,
-            image: "https://picsum.photos/600/200/?image=2"
-        },
-    ];
+.controller('MainCtrl', function ($scope, $rootScope, $sce, ngProgressFactory,
+    slidesService, $q, imgResponsiveFilter) {
+    
+    $scope.myInterval = 4000;
+    $scope.noWrapSlides = false;
+    $scope.pathLocation = $rootScope.pathLocation;
+   
+    $scope.init = function() {
+        $scope.progressbar = ngProgressFactory.createInstance();
+        $scope.progressbar.start();
+        return $q.all([
+            slidesService.get().$promise
+        ]).then(function(data) {
+            $scope.slides = data[0].slides;
+            $scope.progressbar.complete();
+        });
+    };
     
     $scope.animateElementInFadeIn = function($el) {
         $el.removeClass('not-visible');
@@ -43,4 +45,11 @@ angular.module('proagrocorpFrontendApp')
         $el.addClass('not-visible');
         $el.removeClass('animated zoomIn'); // this example leverages animate.css classes
     };
+    
+    $scope.getSlideSrc = function(slide, size) {
+        var src = $rootScope.pathLocation + 'img/slides/' + slide.imagen;
+        return $sce.trustAsResourceUrl(imgResponsiveFilter(src, size));
+    };
+    
+    $scope.init();
 });

@@ -84,7 +84,7 @@ angular
              categoriesService.get().$promise
              //noticiasservice.getSome({amount: 3}).$promise
         ]).then(function(data) {
-            $rootScope.infosIndex = data[0].info;
+            $rootScope.infosIndex = data[0].infos;
             $rootScope.linksHeader = data[1].linksHeader;
             $rootScope.linksFooter = data[2].linksFooter;
             $rootScope.categories = data[3].categories;

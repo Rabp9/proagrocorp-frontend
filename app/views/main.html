@@ -3,7 +3,7 @@
         <picture picturefill>
             <source media='(max-width: 767px)' ng-attr-srcset="{{ getSlideSrc(slide, '_small') }}">
             <source media='(min-width: 767px)' ng-attr-srcset="{{ getSlideSrc(slide, '_large') }}">
-            <img class="img-slider" ng-src="{{slide.image}}">
+            <img class="img-slider" ng-src="{{ getSlideSrc(slide, '_large') }}">
         </picture>
     </div>
 </div>
