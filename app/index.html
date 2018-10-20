@@ -60,16 +60,16 @@
                         <li class="active"><a href="#/">INICIO</a></li>
                         
                         <li ng-repeat="category in categories">
-                            <a ng-if="category.child1Categories.length == 0" ng-href="#/">{{ category.descripcion }}</a>
+                            <a ng-if="category.children.length == 0" ng-href="#/">{{ category.descripcion }}</a>
                             
-                            <a ng-if="category.child1Categories.length > 0" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ category.descripcion }} <span class="caret"></span></a>
-                            <ul ng-if="category.child1Categories.length > 0"  class="dropdown-menu multi-level">
-                                <li class="dropdown-submenu" ng-repeat="categoryChild1 in category.child1Categories">
-                                    <a ng-if="categoryChild1.child2Categories.length == 0" href="#">{{ categoryChild1.descripcion }}</a>
+                            <a ng-if="category.children.length > 0" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ category.descripcion }} <span class="caret"></span></a>
+                            <ul ng-if="category.children.length > 0"  class="dropdown-menu multi-level">
+                                <li class="dropdown-submenu" ng-repeat="categoryChild1 in category.children">
+                                    <a ng-if="categoryChild1.children.length == 0" href="#">{{ categoryChild1.descripcion }}</a>
                                     
-                                    <a ng-if="categoryChild1.child2Categories.length > 0" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ categoryChild1.descripcion }} <span class="caret"></span></a>
-                                    <ul ng-if="categoryChild1.child2Categories.length > 0" class="dropdown-menu">
-                                        <li class="dropdown-submenu" ng-repeat="categoryChild2 in categoryChild1.child2Categories">
+                                    <a ng-if="categoryChild1.children.length > 0" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ categoryChild1.descripcion }} <span class="caret"></span></a>
+                                    <ul ng-if="categoryChild1.children.length > 0" class="dropdown-menu">
+                                        <li class="dropdown-submenu" ng-repeat="categoryChild2 in categoryChild1.children">
                                             <a href="#">{{ categoryChild2.descripcion }}</a>
                                         </li>
                                     </ul>
