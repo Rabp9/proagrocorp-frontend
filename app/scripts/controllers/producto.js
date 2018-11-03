@@ -14,7 +14,7 @@ angular.module('proagrocorpFrontendApp')
     $scope.init = function() {
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
-        productosService.get({id: $state.params.id}, function(data) {
+        productosService.get({id: $state.params.producto_id}, function(data) {
             $scope.producto = data.producto;
             var imagen = 'img/productos/' + $scope.producto.portada;
             $rootScope.title = $scope.producto.titulo; 

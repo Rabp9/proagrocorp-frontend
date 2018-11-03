@@ -51,9 +51,22 @@ angular
         title: 'Contacto'
     };
     
+    var categoryState = {
+        name: 'category',
+        url: '/category/{category_id}',
+        templateUrl: 'views/category.html',
+        controller: 'CategoryCtrl',
+        controllerAs: 'category',
+        params: {
+            id: {
+                value: '1'
+            }
+        }
+    };
+    
     var productoState = {
         name: 'producto',
-        url: '/producto/{id}',
+        url: '/category/{category_id}/producto/{producto_id}/{descripcion}',
         templateUrl: 'views/producto.html',
         controller: 'ProductoCtrl',
         controllerAs: 'producto',
@@ -68,6 +81,7 @@ angular
     $stateProvider.state(contactoState);
     $stateProvider.state(nosotrosState);
     $stateProvider.state(productoState);
+    $stateProvider.state(categoryState);
     $urlRouterProvider.when('', '/');
 })
 .run(function($rootScope, $state, /*$window, $sce,*/ envService, infosService, linksService, categoriesService, /*serviciosservice,
