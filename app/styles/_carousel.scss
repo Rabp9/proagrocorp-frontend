@@ -18,6 +18,7 @@
 }
 
 .carousel-inner, .carousel-inner img, div.text-center {
+    width: 100%;
     @media (min-width: $screen-sm-min) {
         height: 100%;
         min-height: 200px;

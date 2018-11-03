@@ -42,7 +42,7 @@ img.bg {
     -moz-transition: opacity 0.5s ease-in-out;
     -ms-transition: opacity 0.5s ease-in-out;
     -o-transition: opacity 0.5s ease-in-out;
-     transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     opacity: 0.5;
     position: absolute;
     top: 0;
@@ -51,8 +51,13 @@ img.bg {
 }
 
 .linea-productos {
+    h3 {
+        text-align: center;
+        position: relative;
+    }
     a {
         color: $color-white;
+        text-decoration: none;
     }
     &.lpL {
         padding-left: 0px;
@@ -152,4 +157,8 @@ img.bg {
             -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
             background-color: $color-default;
         }
+}
+
+.slick-prev:before, .slick-next:before {
+    color: $color-default;
 }

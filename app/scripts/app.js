@@ -66,7 +66,7 @@ angular
     
     var productoState = {
         name: 'producto',
-        url: '/category/{category_id}/producto/{producto_id}/{descripcion}',
+        url: '/category/{category_id}/producto/{producto_id}/{slug}',
         templateUrl: 'views/producto.html',
         controller: 'ProductoCtrl',
         controllerAs: 'producto',

@@ -9,23 +9,32 @@
  */
 angular.module('proagrocorpFrontendApp')
 .controller('MainCtrl', function ($scope, $rootScope, $sce, ngProgressFactory,
-    slidesService, $q, imgResponsiveFilter, categoriesService) {
+    slidesService, $q, imgResponsiveFilter, categoriesService, productosService,
+    infosService) {
     
     $scope.myInterval = 4000;
     $scope.noWrapSlides = false;
     $scope.pathLocation = $rootScope.pathLocation;
+    
+    var search = ['bg_descripcion'];
    
     $scope.init = function() {
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         return $q.all([
             slidesService.get().$promise,
-            categoriesService.get({estado_id: 1}).$promise
+            categoriesService.get({estado_id: 1}).$promise,
+            productosService.get({estado_id: 1}).$promise,
+            infosService.getMany(search).$promise
         ]).then(function(data) {
             $scope.slides = data[0].slides;
             $scope.categories = data[1].categories;
+            $scope.productos = data[2].productos;
+            $scope.infos = data[3].infos;
+            
             for (var i = 0; i < $scope.categories.length; i++) {
                 $scope.categories[i].col = 'col-sm-6';
+                // $scope.categories[i].delay = Math.floor((Math.random() * 100) + 1) / 100;
                 if (i % 2) {
                     $scope.categories[i].lp = "R";
                 } else {
@@ -69,8 +78,18 @@ angular.module('proagrocorpFrontendApp')
         return $sce.trustAsResourceUrl(imgResponsiveFilter(src, size));
     };
     
-    $scope.getBgSrc = function(category, size) {
+    $scope.getCategoriesSrc = function(category, size) {
         var src = $rootScope.pathLocation + 'img/categories/' + category.portada;
+        return $sce.trustAsResourceUrl(imgResponsiveFilter(src, size));
+    };
+    
+    $scope.getProductosSrc = function(producto, size) {
+        var src = $rootScope.pathLocation + 'img/productos/' + producto.imagen;
+        return $sce.trustAsResourceUrl(imgResponsiveFilter(src, size));
+    };
+    
+    $scope.getBgDescripcionSrc = function(bg_descripcion, size) {
+        var src = $rootScope.pathLocation + 'img/infos/' + bg_descripcion;
         return $sce.trustAsResourceUrl(imgResponsiveFilter(src, size));
     };
     
