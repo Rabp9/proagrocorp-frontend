@@ -49,8 +49,7 @@
 </div>
 <div class="dv-separator">
 </div>
-{{ infos.length | json }}
-<section
+<section ng-if="infos != undefined"
     when-visible="animateElementInFadeIn"
     when-not-visible="animateElementOutFadeIn" class="not-visible">
     <div class="container-fluid with-bg">
