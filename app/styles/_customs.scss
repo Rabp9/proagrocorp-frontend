@@ -162,3 +162,17 @@ img.bg {
 .slick-prev:before, .slick-next:before {
     color: $color-default;
 }
+
+.category {
+    .breadcrumb {
+        margin-bottom: 5px;
+    }
+    h3 {
+        margin-top: 2px;
+        margin-bottom: 1px;
+    }
+    hr {
+        margin-top: 2px;
+        margin-bottom: 8px;
+    }
+}

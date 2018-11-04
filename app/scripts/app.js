@@ -21,7 +21,8 @@ angular
     'slick',
     'angular-scroll-animate',
     'ngProgress',
-    'ezplus'
+    'ezplus',
+    'ngYoutubeEmbed'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
     var mainState = {

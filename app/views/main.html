@@ -68,8 +68,15 @@
 </section>
 <div class="dv-separator">
 </div>
-<div class="container" style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Kq8Zr-I62NI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="container" style="text-align: center;" ng-if="infos != undefined">
+    <ng-youtube-embed 
+        video="infos.video" 
+        width="750"
+        height="525"
+        autoplay="true"
+        color="white"
+        disablekb="true">
+    </ng-youtube-embed>
 </div>
 <div class="dv-separator">
 </div>

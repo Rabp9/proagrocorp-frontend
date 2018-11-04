@@ -1,4 +1,6 @@
-<div class="container">
+<div class="dv-separator">
+</div>
+<div class="container-fluid category">
     <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li ng-if="producto.category.parent_categories1.parent_categories2 !== undefined">
@@ -10,37 +12,39 @@
         <li>{{ producto.descripcion }}</li>
     </ol>
     <div class="row">
-        <h3>{{ category.descripcion }} aaaa</h3>
-        <hr>
-        <form>
-            <div class="input-group col-sm-3">
-                <input id="srText" type="search" class="form-control" placeholder="Buscar..." ng-model="search.text">
-                <div class="input-group-btn">
-                    <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+        <div class="col-sm-12">
+            <h3>{{ category.descripcion }} aaaa</h3>
+            <hr>
+            <form>
+                <div class="input-group col-sm-3">
+                    <input id="srText" type="search" class="form-control" placeholder="Buscar..." ng-model="search.text">
+                    <div class="input-group-btn">
+                        <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
                 </div>
+            </form>
+            <br>
+            <div class="col-sm-3">
+                <img src="https://picsum.photos/600/300/?image=0" />
             </div>
-        </form>
-        <br>
-        <div class="col-sm-3">
-            <img src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
-            <img src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
-            <img src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
-            <img src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
-            <img src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
-            <img src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
-            <img src="https://picsum.photos/600/300/?image=0" />
+            <div class="col-sm-3">
+                <img src="https://picsum.photos/600/300/?image=0" />
+            </div>
+            <div class="col-sm-3">
+                <img src="https://picsum.photos/600/300/?image=0" />
+            </div>
+            <div class="col-sm-3">
+                <img src="https://picsum.photos/600/300/?image=0" />
+            </div>
+            <div class="col-sm-3">
+                <img src="https://picsum.photos/600/300/?image=0" />
+            </div>
+            <div class="col-sm-3">
+                <img src="https://picsum.photos/600/300/?image=0" />
+            </div>
+            <div class="col-sm-3">
+                <img src="https://picsum.photos/600/300/?image=0" />
+            </div>
         </div>
     </div>
 </div>
