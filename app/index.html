@@ -94,9 +94,7 @@
             <div class="row first-footer">
                 <div class="col-sm-4 link">
                     <h3>Nosotros</h3>
-                    <p>lorem ipsum</p>
-                    <p>lorem ipsum</p>
-                    <p>lorem ipsum</p>
+                    <div ng-bind-html="infosIndex.nosotros"></div>
                 </div>
                 <div class="col-sm-4 link">
                     <h3>Productos</h3>
@@ -122,7 +120,7 @@
         </div>
         <br>
         <div class="container-fluid copyright">
-            <p class="text-center">copyright copyright copyright</p>
+            <p class="text-center" ng-bind-html="infosIndex.copyright"></p>
         </div>
         <br>
     </div>

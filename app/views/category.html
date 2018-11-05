@@ -2,22 +2,22 @@
 </div>
 <div class="container-fluid category">
     <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li ng-if="producto.category.parent_categories1.parent_categories2 !== undefined">
-            {{ producto.category.parent_categories1.parent_categories2.descripcion }}
+        <li><a ui-sref="main">Home</a></li>
+        <li ng-if="category.parent_categories1.parent_categories2 !== undefined">
+            <a ui-sref="category({ category_id: category.parent_categories1.parent_categories2.id })">{{ category.parent_categories1.parent_categories2.descripcion }}</a>
         </li>
-        <li ng-if="producto.category.parent_categories1 !== undefined">
-            {{ producto.category.parent_categories1.descripcion }}
+        <li ng-if="category.parent_categories1 !== null">
+            <a ui-sref="category({ category_id: category.parent_categories1.id })">{{ category.parent_categories1.descripcion }}</a>
         </li>
-        <li>{{ producto.descripcion }}</li>
+        <li>{{ category.descripcion }}</li>
     </ol>
     <div class="row">
         <div class="col-sm-12">
-            <h3>{{ category.descripcion }} aaaa</h3>
+            <h3>{{ category.descripcion }}</h3>
             <hr>
-            <form>
-                <div class="input-group col-sm-3">
-                    <input id="srText" type="search" class="form-control" placeholder="Buscar..." ng-model="search.text">
+            <form class="form-inline">
+                <div class="input-group">
+                    <label for="srText">Buscar productos:</label> <input id="srText" type="search" class="form-control" placeholder="Buscar..." ng-model="search.text">
                     <div class="input-group-btn">
                         <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                     </div>
