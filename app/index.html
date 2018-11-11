@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 </head>
-<body>
+<body ng-cloak>
     <!--[if lte IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -60,17 +60,17 @@
                         <li class="active"><a ui-sref="main">INICIO</a></li>
                         
                         <li ng-repeat="category in categories">
-                            <a ng-if="category.children.length == 0" ng-href="#/">{{ category.descripcion }}</a>
+                            <a ng-if="category.children.length == 0" ui-sref="category({ category_id: category.id })">{{ category.descripcion }}</a>
                             
-                            <a ng-if="category.children.length > 0" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ category.descripcion }} <span class="caret"></span></a>
-                            <ul ng-if="category.children.length > 0"  class="dropdown-menu multi-level">
+                            <a ng-if="category.children.length > 0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ category.descripcion }}</a>
+                            <ul ng-if="category.children.length > 0" class="dropdown-menu multi-level">
                                 <li class="dropdown-submenu" ng-repeat="categoryChild1 in category.children">
-                                    <a ng-if="categoryChild1.children.length == 0" href="#">{{ categoryChild1.descripcion }}</a>
+                                    <a ng-if="categoryChild1.children.length == 0" ui-sref="category({ category_id: categoryChild1.id })">{{ categoryChild1.descripcion }}</a>
                                     
-                                    <a ng-if="categoryChild1.children.length > 0" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ categoryChild1.descripcion }} <span class="caret"></span></a>
+                                    <a ng-if="categoryChild1.children.length > 0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ categoryChild1.descripcion }}</a>
                                     <ul ng-if="categoryChild1.children.length > 0" class="dropdown-menu">
                                         <li class="dropdown-submenu" ng-repeat="categoryChild2 in categoryChild1.children">
-                                            <a href="#">{{ categoryChild2.descripcion }}</a>
+                                            <a ui-sref="category({ category_id: categoryChild2.id })">{{ categoryChild2.descripcion }}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -122,7 +122,6 @@
         <div class="container-fluid copyright">
             <p class="text-center" ng-bind-html="infosIndex.copyright"></p>
         </div>
-        <br>
     </div>
 
 

@@ -1,5 +1,3 @@
-<div class="dv-separator">
-</div>
 <div class="container-fluid category">
     <ol class="breadcrumb">
         <li><a ui-sref="main">Home</a></li>
@@ -11,13 +9,23 @@
         </li>
         <li>{{ category.descripcion }}</li>
     </ol>
+    <div class="with-bg" ng-if="category.portada !== undefined">
+        <picture picturefill>
+            <source media='(max-width: 767px)' ng-attr-srcset="{{ getCategoriesSrc(category, '_small') }}">
+            <source media='(min-width: 767px)' ng-attr-srcset="{{ getCategoriesSrc(category, '_large') }}">
+            <img class="img-responsive bg" ng-src="{{ getCategoriesSrc(category, '_large') }}">
+        </picture>
+        <div class="container">
+            <h2 class="text-center">{{ category.descripcion }}</h2>
+            <h4 class="text-center" ng-bind-html="category.resumen"></h4>
+        </div>
+    </div>
+    <br>
     <div class="row">
         <div class="col-sm-12">
-            <h3>{{ category.descripcion }}</h3>
-            <hr>
             <form class="form-inline">
+                <label for="srText">Buscar productos:</label> <input id="srText" type="search" class="form-control" placeholder="Buscar..." ng-model="search.text">
                 <div class="input-group">
-                    <label for="srText">Buscar productos:</label> <input id="srText" type="search" class="form-control" placeholder="Buscar..." ng-model="search.text">
                     <div class="input-group-btn">
                         <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                     </div>
@@ -27,26 +35,9 @@
     </div>
     <br>
     <div class="row">
-        <div class="col-sm-3">
-            <img class="img-responsive" src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
-            <img class="img-responsive" src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
-            <img class="img-responsive" src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
-            <img class="img-responsive" src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
-            <img class="img-responsive" src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
-            <img class="img-responsive" src="https://picsum.photos/600/300/?image=0" />
-        </div>
-        <div class="col-sm-3">
+        <div class="col-sm-3 producto" ng-repeat="producto in category.productos">
             <img class="img-responsive" src="https://picsum.photos/600/300/?image=0" />
         </div>
     </div>
 </div>
+<div class="dv-separator"></div>
