@@ -17,7 +17,7 @@ angular.module('proagrocorpFrontendApp')
         productosService.get({id: $state.params.producto_id}, function(data) {
             $scope.producto = data.producto;
             var imagen = 'img/productos/' + $scope.producto.portada;
-            $rootScope.title = $scope.producto.titulo; 
+            $rootScope.title = $scope.producto.descripcion; 
             $scope.progressbar.complete();
             $scope.style = {
                 backgroundImage: 'url("' + $rootScope.path_location + imagen + '")'

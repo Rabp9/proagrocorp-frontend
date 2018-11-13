@@ -100,6 +100,7 @@ img.bg {
 
 .dv-separator {
     height: 40px;
+    z-index: -1;
 }
 
 .not-visible {
@@ -149,6 +150,12 @@ img.bg {
     .image img {
         margin: 0 auto;
     }
+    h4 {
+        margin-top: 25px;
+        a:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 .modal-body-overflow {
@@ -188,5 +195,14 @@ img.bg {
     }
     .producto {
         margin-top: 20px;
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+            h3 {
+                text-align: center;
+                margin-top: 15px;
+            }
+        }
     }
 }

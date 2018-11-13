@@ -1,7 +1,14 @@
 {
     "elements": {
         "ng-youtube-embed": {},
-        "slick": {}
+        "slick": {
+            "attributes": {
+                "slides-to-show": {},
+                "infinite": {},
+                "ng-if": {},
+                "speed": {}
+            }
+        }
     },
     "attributes": {
         "uib-carousel": {

@@ -20,23 +20,33 @@
             <h4 class="text-center" ng-bind-html="category.resumen"></h4>
         </div>
     </div>
-    <br>
     <div class="row">
         <div class="col-sm-12">
-            <form class="form-inline">
-                <label for="srText">Buscar productos:</label> <input id="srText" type="search" class="form-control" placeholder="Buscar..." ng-model="search.text">
-                <div class="input-group">
-                    <div class="input-group-btn">
-                        <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-                    </div>
-                </div>
-            </form>
+            <ul class="pull-right" uib-pagination total-items="pagination.totalItems" first-text="<<" 
+                last-text=">>" next-text=">" previous-text="<"
+                items-per-page="pagination.itemsPerPage" ng-model="page" 
+                class="pagination-sm" boundary-links="true" force-ellipses="true"
+                ng-change="pageChanged()">
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 producto" ng-repeat="producto in productos">
+            <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">
+                <img class="img-responsive hvr-grow" src="https://picsum.photos/600/300/?image=0" />
+                <h3>{{ producto.descripcion }}</h3>
+            </a>
         </div>
     </div>
     <br>
     <div class="row">
-        <div class="col-sm-3 producto" ng-repeat="producto in category.productos">
-            <img class="img-responsive" src="https://picsum.photos/600/300/?image=0" />
+        <div class="col-sm-12">
+            <ul class="pull-right" uib-pagination total-items="pagination.totalItems" first-text="<<" 
+                last-text=">>" next-text=">" previous-text="<"
+                items-per-page="pagination.itemsPerPage" ng-model="page" 
+                class="pagination-sm" boundary-links="true" force-ellipses="true"
+                ng-change="pageChanged()">
+            </ul>
         </div>
     </div>
 </div>
