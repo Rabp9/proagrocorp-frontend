@@ -85,7 +85,7 @@ angular
     $stateProvider.state(categoryState);
     $urlRouterProvider.when('', '/');
 })
-.run(function($rootScope, $state, /*$window, $sce,*/ envService, infosService, linksService, categoriesService, /*serviciosservice,
+.run(function($rootScope, $state, $window, /*$sce,*/ envService, infosService, linksService, categoriesService, /*serviciosservice,
     noticiasservice,*/ $q) {
     $rootScope.pathLocation = envService.getHost();
     
@@ -110,6 +110,7 @@ angular
     
     $rootScope.$on('$stateChangeSuccess', function(event, toParams, fromState, fromParams) {
         $rootScope.title = $state.current.title;
+        $window.scrollTo(0, 0);
     });
     /*
     $('#mmNav a').click(function() {

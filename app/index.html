@@ -94,26 +94,29 @@
             <div class="row first-footer">
                 <div class="col-sm-4 link">
                     <h3>Nosotros</h3>
+                    <hr>
                     <div ng-bind-html="infosIndex.nosotros"></div>
                 </div>
                 <div class="col-sm-4 link">
-                    <h3>Productos</h3>
+                    <h3>Categorías</h3>
+                    <hr>
                     <ul>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 5</a></li>
+                        <li ng-repeat="category in categories">
+                            <a ui-sref="category({ category_id: category.id })">
+                                {{ category.descripcion }}
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-4 link">
                     <h3>Enlaces Externos</h3>
+                    <hr>
                     <ul>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 5</a></li>
+                        <li ng-repeat="linkFooter in linksFooter">
+                            <a target="_blank" ng-href="{{ linkFooter.url }}">
+                                {{ linkFooter.descripcion }}
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -123,8 +126,6 @@
             <p class="text-center" ng-bind-html="infosIndex.copyright"></p>
         </div>
     </div>
-
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
         !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
