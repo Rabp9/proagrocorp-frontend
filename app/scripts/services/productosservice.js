@@ -9,5 +9,10 @@
  */
 angular.module('proagrocorpFrontendApp')
 .factory('productosService', function($resource, envService) {
-    return $resource(envService.getHost() + 'productos/:id.json');
+    return $resource(envService.getHost() + 'productos/:id.json', {}, {
+        getRelacionados: {
+            method: 'GET',
+            url: envService.getHost() + 'productos/getRelacionados/:producto_id.json'
+        }
+    });
 });
