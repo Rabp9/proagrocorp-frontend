@@ -37,17 +37,17 @@
 <div class="container">
     {{ productos | json }}
     <h3>Productos Relacionados</h3>
-    <slick infinite="true" speed="300" slides-to-show="5">
-        <div ng-repeat="producto in productos">
+    <slick ng-if="productosRelacionados.length" infinite="true" speed="300" slides-to-show="5">
+        <div ng-repeat="productoRelacionado in productosRelacionados">
             <div class="image">
-                <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">
+                <a ui-sref="producto({ category_id: productoRelacionado.category_id, productoRelacionado productoRelacionado.id, slug: productoRelacionado.slug })">
                     <picture picturefill>
-                        <source media='(max-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_small') }}">
-                        <source media='(min-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_large') }}">
-                        <img class="img-responsive" ng-src="{{ getProductosSrc(producto, '_large') }}">
+                        <source media='(max-width: 767px)' ng-attr-srcset="{{ getProductosSrc(productoRelacionado, '_small') }}">
+                        <source media='(min-width: 767px)' ng-attr-srcset="{{ getProductosSrc(productoRelacionado, '_large') }}">
+                        <img class="img-responsive" ng-src="{{ getProductosSrc(productoRelacionado, '_large') }}">
                     </picture>
                 </a>
-                <h4 class="text-center"><a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">{{ producto.descripcion }}</a></h4>
+                <h4 class="text-center"><a ui-sref="producto({ category_id: productoRelacionado.category_id, producto_id: productoRelacionado.id, slug: productoRelacionado.slug })">{{ productoRelacionado.descripcion }}</a></h4>
             </div>
         </div>
     </slick>

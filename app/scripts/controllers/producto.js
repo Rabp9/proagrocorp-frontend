@@ -9,7 +9,7 @@
  */
 angular.module('proagrocorpFrontendApp')
 .controller('ProductoCtrl', function ($scope, $state, ngProgressFactory, productosService,
-    $rootScope, $q) {
+    $rootScope, $q, $sce, imgResponsiveFilter) {
         
     $scope.init = function() {
         $scope.loading = true;
@@ -40,9 +40,15 @@ angular.module('proagrocorpFrontendApp')
         productosService.getRelacionados({
             producto_id: producto_id
         }, function(data) {
+            $scope.productosRelacionados = data.productos
             $scope.loading = false;
             $scope.progressbar.complete();
         });
+    };
+    
+    $scope.getProductosSrc = function(producto, size) {
+        var src = $rootScope.pathLocation + 'img/productos/' + producto.imagen;
+        return $sce.trustAsResourceUrl(imgResponsiveFilter(src, size));
     };
     
     $scope.init();

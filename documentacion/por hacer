@@ -5,11 +5,11 @@
 5. al entrar a producto, subir el focus-----------------------------------------
 6. mostrar productos con link nombre css en category----------------------------
 7. buscador de productos en category--------------------------------------------
-8. Implementar productos relacionados en producto
+8. Implementar productos relacionados en producto-------------------------------
 9. link facebook twitter en producto
 10. titulo en producto----------------------------------------------------------
-11. nosotros en proagrocorp-admin
-12. implementar nosotros dinamicamente
+11. nosotros en proagrocorp-admin-----------------------------------------------
+12. implementar nosotros dinamicamente------------------------------------------
 13. implementar contacto en frontend
 14. incluir imagen en contacto
 15. implementar contacto en backend
@@ -19,3 +19,4 @@
 19. implementar mas efectos
 20. icono de frontend
 21. loading en category
+22. implementar loading por todos lados

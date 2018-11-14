@@ -1,59 +1,15 @@
-<div class="with-bg">
+<div class="with-bg" ng-if="infosNosotros !== undefined">
     <picture picturefill>
-        <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
-        <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
+        <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgNosotrosSrc(infosNosotros.bg_nosotros, '_small') }}">
+        <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgNosotrosSrc(infosNosotros.bg_nosotros, '_large') }}">
         <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
-        <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=east">
+        <img class="img-responsive bg" ng-src="{{ getBgNosotrosSrc(infosNosotros.bg_nosotros, '_large') }}">
     </picture>
     <div class="container">
         <h2 class="text-center">Nosotros</h2>
         <hr>
-        <h4 class="text-center">Global Agro, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et pellentesque risus, bibendum commodo ligula. Ut vitae elit massa.</h4>
+        <h4 class="text-center">{{ infosNosotros.descripcion }}</h4>
     </div>
 </div>
-<div class="container nosotros">
-    <h3>Nuestra Historia</h3>
-    <div>
-        <div class="text-center">
-            <img src="https://picsum.photos/600/300/?image=0">
-        </div>
-        <br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque ante. Integer consectetur maximus magna, sed elementum ante suscipit interdum. Phasellus efficitur at eros et aliquam. Aenean in tempus velit. Donec nulla eros, condimentum non enim eget, mattis fermentum lectus. Pellentesque velit lectus, venenatis at aliquam sed, pellentesque eget lectus. In malesuada lectus enim, sit amet efficitur risus pellentesque et. Suspendisse potenti. Donec non ornare nunc. Nullam consequat nisl elit, et rutrum diam tempus molestie. Pellentesque vitae arcu sodales, imperdiet nulla ut, rhoncus augue.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque ante. Integer consectetur maximus magna, sed elementum ante suscipit interdum. Phasellus efficitur at eros et aliquam. Aenean in tempus velit. Donec nulla eros, condimentum non enim eget, mattis fermentum lectus. Pellentesque velit lectus, venenatis at aliquam sed, pellentesque eget lectus. In malesuada lectus enim, sit amet efficitur risus pellentesque et. Suspendisse potenti. Donec non ornare nunc. Nullam consequat nisl elit, et rutrum diam tempus molestie. Pellentesque vitae arcu sodales, imperdiet nulla ut, rhoncus augue.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque ante. Integer consectetur maximus magna, sed elementum ante suscipit interdum. Phasellus efficitur at eros et aliquam. Aenean in tempus velit. Donec nulla eros, condimentum non enim eget, mattis fermentum lectus. Pellentesque velit lectus, venenatis at aliquam sed, pellentesque eget lectus. In malesuada lectus enim, sit amet efficitur risus pellentesque et. Suspendisse potenti. Donec non ornare nunc. Nullam consequat nisl elit, et rutrum diam tempus molestie. Pellentesque vitae arcu sodales, imperdiet nulla ut, rhoncus augue.</p>       
-    </div>
-    <h3>Nosotros</h3>
-    <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque ante. Integer consectetur maximus magna, sed elementum ante suscipit interdum. Phasellus efficitur at eros et aliquam. Aenean in tempus velit. Donec nulla eros, condimentum non enim eget, mattis fermentum lectus. Pellentesque velit lectus, venenatis at aliquam sed, pellentesque eget lectus. In malesuada lectus enim, sit amet efficitur risus pellentesque et. Suspendisse potenti. Donec non ornare nunc. Nullam consequat nisl elit, et rutrum diam tempus molestie. Pellentesque vitae arcu sodales, imperdiet nulla ut, rhoncus augue.</p>
-        <div class="text-center">
-            <img src="https://picsum.photos/600/300/?image=1">
-        </div>
-        <br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque ante. Integer consectetur maximus magna, sed elementum ante suscipit interdum. Phasellus efficitur at eros et aliquam. Aenean in tempus velit. Donec nulla eros, condimentum non enim eget, mattis fermentum lectus. Pellentesque velit lectus, venenatis at aliquam sed, pellentesque eget lectus. In malesuada lectus enim, sit amet efficitur risus pellentesque et. Suspendisse potenti. Donec non ornare nunc. Nullam consequat nisl elit, et rutrum diam tempus molestie. Pellentesque vitae arcu sodales, imperdiet nulla ut, rhoncus augue.</p>
-    </div>
-    <h3>Nuestros Valores</h3>
-    <div>
-        <p>Sabemos lo importante de una política corporativa, por lo cual, en Corporación Global Agro, nos esforzamos en cultivar en cada uno de nosotros, los siguientes valores:</p>
-        <div class="text-center">
-            <img src="images/valores.png" width="900">
-        </div>
-        <br>
-    </div>
-    <h3>Misión y Visión</h3>    
-    <div>
-        <p><b>Misión:</b> "Somos el proveedor aliado del agricultor, el cual brinda soporte mediante sus planes nutricionales y de protección con el fin de incrementar su producción y aumentar la calidad de sus cosechas."</p>
-        <p><b>Visión:</b> “Ser el proveedor líder para los distribuidores a nivel nacional en productos y soluciones de nutrición y protección vegetal,  100% comprometido con el agricultor y sus cosechas."</p>
-        <div class="text-center">
-            <img src="https://picsum.photos/600/300/?image=2">
-        </div>
-    </div>
-    <h3>Políticas de Calidad</h3>    
-    <div>
-        <p>Somos conscientes que estamos viviendo en un mundo competitivo, para lo cual nuestra prioridad es ofrecerles a nuestros clientes, productos acorde a las necesidades especificas para cada cultivo, siendo indispensable contar con parámetros en nuestra producción, para ofrecerles productos competitivos. "La calidad de cada uno de nuestros productos lo comprobamos en el campo".</p>
-        <div class="text-center">
-            <img src="images/politicas.png" width="700">
-        </div>
-    </div>
+<div ng-bind-html="infosNosotros.nosotros_body">
 </div>
-<br>
-<br>
