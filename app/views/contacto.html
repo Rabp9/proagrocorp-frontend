@@ -1,9 +1,9 @@
-<div class="with-bg">
+<div class="with-bg" ng-if="infosNosotros !== undefined">
     <picture picturefill>
-        <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_small') }}">
-        <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSrc(infos.bg_descripcion, '_large') }}">
+        <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgContactoSrc(infosNosotros.bg_contacto, '_small') }}">
+        <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgContactoSrc(infosNosotros.bg_contacto, '_large') }}">
         <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
-        <img class="img-responsive bg" ng-src="https://picsum.photos/600/200/?gravity=east">
+        <img class="img-responsive bg" ng-src="{{ getBgContactoSrc(infosNosotros.bg_contacto, '_large') }}">
     </picture>
     <div class="container">
         <h2 class="text-center">Contacto</h2>
@@ -13,31 +13,39 @@
 </div>
 <br>
 <div class="container">
-    <form>
-        <div class="row">
-            <div class="form-group col-sm-8">
-                <label for="txtNombres">Nombres</label>
-                <input id="txtNombres" type="text" class="form-control" ng-model="nombres">
-            </div>
-            <div class="form-group col-sm-4">
-                <label for="emEmail">Email</label>
-                <input id="emEmail" type="email" class="form-control" ng-model="nombres">
-            </div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <form novalidate angular-validator angular-validator-submit="send(mensaje, 'btnSendMensaje')" name="MensajeSend">
+                <div class="row">
+                    <div class="form-group-sm col-sm-8">
+                        <label for="txtNombres">Nombres</label>
+                        <input id="txtNombres" type="text" class="form-control" ng-model="mensaje.nombres"
+                            name="mensajeNombres" required required-message="'Este campo es requerido'" validate-on="blur"/>
+                    </div>
+                    <div class="form-group-sm col-sm-4">
+                        <label for="emEmail">Email</label>
+                        <input id="emEmail" type="email" class="form-control" ng-model="mensaje.email"
+                            name="mensajeEmail" invalid-message="'Ingrese un email'" required required-message="'Este campo es requerido'" validate-on="blur"/>
+                    </div>
+                </div>
+                <div class="form-group-sm">
+                    <label for="txtAsunto">Asunto</label>
+                    <input id="txtAsunto" type="text" class="form-control" ng-model="mensaje.asunto"
+                        name="mensajeAsunto" required required-message="'Este campo es requerido'" validate-on="blur"/>
+                </div>
+                <div class="form-group-sm">
+                    <label for="txtaBody">Mensaje</label>
+                    <textarea id="txtaBody" class="form-control mensaje" ng-model="mensaje.body"
+                        name="mensajeBody" required required-message="'Este campo es requerido'" validate-on="blur"/>
+                    </textarea>
+                </div>
+                <br>
+                <div class="form-grou">
+                    <button id="btnSendMensaje" class="btn btn-primary pull-right" type="submit"><span class="glyphicon glyphicon-send"></span> <span class="texto">Enviar</span></button>
+                </div>
+            </form>
         </div>
-        <div class="form-grou">
-            <label for="txtAsunto">Asunto</label>
-            <input id="txtAsunto" type="text" class="form-control" ng-model="asunto">
-        </div>
-        <div class="form-grou">
-            <label for="txtaMensaje">Mensaje</label>
-            <textarea id="txtaMensaje" class="form-control" ng-model="mensaje">
-            </textarea>
-        </div>
-        <br>
-        <div class="form-grou">
-            <button class="btn btn-primary pull-right" type="submit"><span class="glyphicon glyphicon-send"></span> Enviar</button>
-        </div>
-    </form>
+    </div>
 </div>
 <br>
 <br>

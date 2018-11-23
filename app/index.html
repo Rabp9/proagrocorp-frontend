@@ -21,6 +21,22 @@
     <!-- endbuild -->
 </head>
 <body ng-cloak>
+    <!--
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({appId: '174848279222938', status: true, cookie: true,
+            xfbml: true});
+        };
+        (function() {
+            var e = document.createElement('script');
+            e.async = true;
+            e.src = document.location.protocol +
+            '//connect.facebook.net/en_US/all.js';
+            document.getElementById('fb-root').appendChild(e);
+        }());
+    </script>
+    -->
     <!--[if lte IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -84,7 +100,6 @@
             </div>
         </div>
     </div>
-
     <div class="container-fluid">
         <ui-view ng-hide='layout.loading' ></ui-view>
     </div>
@@ -159,6 +174,7 @@
     <script src="bower_components/ez-plus/src/jquery.ez-plus.js"></script>
     <script src="bower_components/angular-ez-plus/js/angular-ezplus.js"></script>
     <script src="bower_components/ng-youtube-embed/build/ng-youtube-embed.min.js"></script>
+    <script src="bower_components/tg-angular-validator/dist/angular-validator.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -178,6 +194,7 @@
     <script src="scripts/services/slidesservice.js"></script>
     <script src="scripts/filters/img-responsive.js"></script>
     <script src="scripts/controllers/category.js"></script>
+    <script src="scripts/services/$utilsviewservice.js"></script>
     <!-- endbuild -->
 </body>
 </html>

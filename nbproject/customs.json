@@ -20,6 +20,9 @@
         "ez-plus": {
             "context": "img"
         },
+        "angular-validator": {
+            "context": "form"
+        },
         "when-visible": {
             "context": "section"
         },

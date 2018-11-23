@@ -22,7 +22,8 @@ angular
     'angular-scroll-animate',
     'ngProgress',
     'ezplus',
-    'ngYoutubeEmbed'
+    'ngYoutubeEmbed',    
+    'angularValidator'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
     var mainState = {

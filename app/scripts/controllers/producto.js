@@ -51,5 +51,18 @@ angular.module('proagrocorpFrontendApp')
         return $sce.trustAsResourceUrl(imgResponsiveFilter(src, size));
     };
     
+    $scope.share = function(producto) {
+        FB.ui(
+        {
+            method: 'feed',
+            name: 'This is the content of the "name" field.',
+            link: 'http://www.hyperarts.com/external-xfbml/'+produdcto.id,
+            picture: 'http://www.hyperarts.com/external-xfbml/share-image.gif',
+            caption: produdcto.descripcion,
+            description: 'This is the content of the "description" field, below the caption.',
+            message: ''
+        });
+    };
+    
     $scope.init();
 });
