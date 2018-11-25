@@ -18,7 +18,6 @@
                 id="zoom_01" 
                 src='https://picsum.photos/600/300/?image=0' 
                 data-zoom-image='https://picsum.photos/2400/1200/?image=0' />
-            
             <a ng-click="share(producto)" title="Compartir en Facebook"><img ng-src="images/fb.svg" class="social-network-icon"></a>
             <a ng-click="share(producto)" title="Compartir en Twitter"><img ng-src="images/tw.svg" class="social-network-icon"></a>
         </div>
@@ -35,7 +34,6 @@
 </div>
 <br>
 <div class="container">
-    {{ productos | json }}
     <h3>Productos Relacionados</h3>
     <slick ng-if="productosRelacionados.length" infinite="true" speed="300" slides-to-show="5">
         <div ng-repeat="productoRelacionado in productosRelacionados">

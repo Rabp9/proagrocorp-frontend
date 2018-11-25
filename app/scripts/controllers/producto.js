@@ -9,7 +9,7 @@
  */
 angular.module('proagrocorpFrontendApp')
 .controller('ProductoCtrl', function ($scope, $state, ngProgressFactory, productosService,
-    $rootScope, $q, $sce, imgResponsiveFilter) {
+    $rootScope, $q, $sce, imgResponsiveFilter, Socialshare) {
         
     $scope.init = function() {
         $scope.loading = true;
@@ -28,6 +28,8 @@ angular.module('proagrocorpFrontendApp')
                 $scope.producto = data.producto;
                 var imagen = 'img/productos/' + $scope.producto.portada;
                 $rootScope.title = $scope.producto.descripcion;
+                $rootScope.opTitle = $scope.producto.descripcion;
+                $rootScope.opDescription = $scope.producto.detalle;
                 $scope.style = {
                     backgroundImage: 'url("' + $rootScope.path_location + imagen + '")'
                 };
@@ -40,7 +42,7 @@ angular.module('proagrocorpFrontendApp')
         productosService.getRelacionados({
             producto_id: producto_id
         }, function(data) {
-            $scope.productosRelacionados = data.productos
+            $scope.productosRelacionados = data.productos;
             $scope.loading = false;
             $scope.progressbar.complete();
         });
@@ -52,15 +54,17 @@ angular.module('proagrocorpFrontendApp')
     };
     
     $scope.share = function(producto) {
-        FB.ui(
-        {
-            method: 'feed',
-            name: 'This is the content of the "name" field.',
-            link: 'http://www.hyperarts.com/external-xfbml/'+produdcto.id,
-            picture: 'http://www.hyperarts.com/external-xfbml/share-image.gif',
-            caption: produdcto.descripcion,
-            description: 'This is the content of the "description" field, below the caption.',
-            message: ''
+        var url = 'http://' +
+            window.location.hostname +
+            ':' +
+            window.location.port +
+            '/' +
+            window.location.hash;
+        Socialshare.share({
+            'provider': 'facebook',
+            'attrs': {
+                'socialshareUrl': 'http://robertobocanegra.com/fb2.html'
+            }
         });
     };
     

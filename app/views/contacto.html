@@ -1,9 +1,9 @@
-<div class="with-bg" ng-if="infosNosotros !== undefined">
+<div class="with-bg" ng-if="infosContacto !== undefined">
     <picture picturefill>
-        <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgContactoSrc(infosNosotros.bg_contacto, '_small') }}">
-        <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgContactoSrc(infosNosotros.bg_contacto, '_large') }}">
+        <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgContactoSrc(infosContacto.bg_contacto, '_small') }}">
+        <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgContactoSrc(infosContacto.bg_contacto, '_large') }}">
         <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
-        <img class="img-responsive bg" ng-src="{{ getBgContactoSrc(infosNosotros.bg_contacto, '_large') }}">
+        <img class="img-responsive bg" ng-src="{{ getBgContactoSrc(infosContacto.bg_contacto, '_large') }}">
     </picture>
     <div class="container">
         <h2 class="text-center">Contacto</h2>
@@ -14,7 +14,11 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
+        <div class="alert alert-dismissible" ng-class="{'alert-success': message.code === 200, 'alert-danger': message.code !== 200 }" role="alert" ng-show="message.code !== undefined">
+            <button type="button" class="close" ng-click="message.code = undefined" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{ message.message }} 
+        </div>
+        <div class="col-sm-7">
             <form novalidate angular-validator angular-validator-submit="send(mensaje, 'btnSendMensaje')" name="MensajeSend">
                 <div class="row">
                     <div class="form-group-sm col-sm-8">
@@ -36,7 +40,7 @@
                 <div class="form-group-sm">
                     <label for="txtaBody">Mensaje</label>
                     <textarea id="txtaBody" class="form-control mensaje" ng-model="mensaje.body"
-                        name="mensajeBody" required required-message="'Este campo es requerido'" validate-on="blur"/>
+                        name="mensajeBody" required required-message="'Este campo es requerido'" validate-on="blur">
                     </textarea>
                 </div>
                 <br>
@@ -45,6 +49,16 @@
                 </div>
             </form>
         </div>
+        <div class="col-sm-5">
+            <div ng-if="infosContacto !== undefined">
+                <picture picturefill>
+                    <source media='(max-width: 767px)' ng-attr-srcset="{{ getContactoImageSrc(infosContacto.contacto_image, '_small') }}">
+                    <source media='(min-width: 767px)' ng-attr-srcset="{{ getContactoImageSrc(infosContacto.contacto_image, '_large') }}">
+                    <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
+                    <img class="img-responsive" ng-src="{{ getContactoImageSrc(infosContacto.contacto_image, '_large') }}">
+                </picture>
+            </div>
+        </div>        
     </div>
 </div>
 <br>

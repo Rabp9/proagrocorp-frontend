@@ -23,7 +23,8 @@ angular
     'ngProgress',
     'ezplus',
     'ngYoutubeEmbed',    
-    'angularValidator'
+    'angularValidator',
+    '720kb.socialshare'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
     var mainState = {
@@ -79,11 +80,21 @@ angular
         }
     };
     
+    var searchState = {
+        name: 'search',
+        url: '/search/{textSearch}',
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl',
+        controllerAs: 'search',
+        title: 'Search'
+    };
+    
     $stateProvider.state(mainState);
     $stateProvider.state(contactoState);
     $stateProvider.state(nosotrosState);
     $stateProvider.state(productoState);
     $stateProvider.state(categoryState);
+    $stateProvider.state(searchState);
     $urlRouterProvider.when('', '/');
 })
 .run(function($rootScope, $state, $window, /*$sce,*/ envService, infosService, linksService, categoriesService, /*serviciosservice,
@@ -113,6 +124,10 @@ angular
         $rootScope.title = $state.current.title;
         $window.scrollTo(0, 0);
     });
+    
+    $rootScope.search = function(textSearch) {
+        $state.go('search', {textSearch: textSearch});
+    };
     /*
     $('#mmNav a').click(function() {
         $('.dropdown.open').removeClass('open');
@@ -132,5 +147,5 @@ angular
     $rootScope.init();
 });
 
-angular.module("uib/template/carousel/carousel.html", []).run(["$templateCache", function($templateCache) {
+angular.module('uib/template/carousel/carousel.html', []).run(['$templateCache', function($templateCache) {
 }]);

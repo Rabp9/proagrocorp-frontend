@@ -12,11 +12,15 @@ angular.module('proagrocorpFrontendApp')
     return $resource(envService.getHost() + 'infos/:id.json', {}, {
         getMany: {
             method: 'POST',
-            url: envService.getHost() + 'infos/getMany.json',
+            url: envService.getHost() + 'infos/getMany.json'
         },
         indexAdmin: {
             method: 'POST',
-            url: envService.getHost() + 'infos/indexAdmin.json',
+            url: envService.getHost() + 'infos/indexAdmin.json'
+        },
+        send: {
+            method: 'POST',
+            url: envService.getHost() + 'infos/send.json'
         }
     });
 });

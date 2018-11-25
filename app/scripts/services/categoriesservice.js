@@ -9,5 +9,10 @@
  */
 angular.module('proagrocorpFrontendApp')
 .factory('categoriesService', function($resource, envService) {
-    return $resource(envService.getHost() + 'categories/:id.json');
+    return $resource(envService.getHost() + 'categories/:id.json', {}, {
+        search: {
+            method: 'GET',
+            url: envService.getHost() + 'categories/search/:textSearch.json'
+        }
+    });
 });

@@ -36,18 +36,18 @@ angular.module('proagrocorpFrontendApp')
                 $scope.categories[i].col = 'col-sm-6';
                 // $scope.categories[i].delay = Math.floor((Math.random() * 100) + 1) / 100;
                 if (i % 2) {
-                    $scope.categories[i].lp = "R";
+                    $scope.categories[i].lp = 'R';
                 } else {
-                    $scope.categories[i].lp = "L";
+                    $scope.categories[i].lp = 'L';
                 }
                 if (i > 1) {
-                    $scope.categories[i].lp += "D";
+                    $scope.categories[i].lp += 'D';
                 }
             }
             if ($scope.categories.length % 2) {
                 $scope.categories[$scope.categories.length - 1].col = 'col-sm-12';
                 $scope.categories[$scope.categories.length - 1].lp = 'LRD';
-            };
+            }
             
             $scope.progressbar.complete();
         });

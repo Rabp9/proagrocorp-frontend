@@ -19,24 +19,12 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ opTitle }}" />
+    <meta property="og:description" content="{{ opDescription }}" />
+    <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
 </head>
 <body ng-cloak>
-    <!--
-    <div id="fb-root"></div>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({appId: '174848279222938', status: true, cookie: true,
-            xfbml: true});
-        };
-        (function() {
-            var e = document.createElement('script');
-            e.async = true;
-            e.src = document.location.protocol +
-            '//connect.facebook.net/en_US/all.js';
-            document.getElementById('fb-root').appendChild(e);
-        }());
-    </script>
-    -->
     <!--[if lte IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -47,9 +35,9 @@
             <ul class="nav navbar-nav pull-right">
                 <li ng-repeat="linkHeader in linksHeader"><a target="_blank" ng-href="{{ linkHeader.url }}">{{ linkHeader.descripcion }}</a></li>
                 <li>
-                    <form class="form-group-sm form-inline">
+                    <form class="form-group-sm form-inline" ng-submit="search(textSearch)">
                         <div class="input-group">
-                        <input type="search" placeholder="Buscar" class="input-sm form-control">
+                            <input type="search" placeholder="Buscar" ng-model="textSearch" class="input-sm form-control">
                             <span class="input-group-btn">   
                                 <button type="submit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
                             </span>
@@ -175,6 +163,7 @@
     <script src="bower_components/angular-ez-plus/js/angular-ezplus.js"></script>
     <script src="bower_components/ng-youtube-embed/build/ng-youtube-embed.min.js"></script>
     <script src="bower_components/tg-angular-validator/dist/angular-validator.js"></script>
+    <script src="bower_components/angular-socialshare/dist/angular-socialshare.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -195,6 +184,7 @@
     <script src="scripts/filters/img-responsive.js"></script>
     <script src="scripts/controllers/category.js"></script>
     <script src="scripts/services/$utilsviewservice.js"></script>
+    <script src="scripts/controllers/search.js"></script>
     <!-- endbuild -->
 </body>
 </html>

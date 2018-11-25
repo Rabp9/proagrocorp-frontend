@@ -14,6 +14,8 @@ angular.module('proagrocorpFrontendApp')
             switch (window.location.hostname) {
                 case 'localhost':
                     return 'http://localhost:8000/proagrocorp-backend/';
+                case 'proagrocorp.robertobocanegra.com':
+                    return 'http://proagrocorp.robertobocanegra.com/api/';
             }
         }
     };

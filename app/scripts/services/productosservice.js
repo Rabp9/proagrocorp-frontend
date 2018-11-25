@@ -13,6 +13,10 @@ angular.module('proagrocorpFrontendApp')
         getRelacionados: {
             method: 'GET',
             url: envService.getHost() + 'productos/getRelacionados/:producto_id.json'
+        },
+        search: {
+            method: 'GET',
+            url: envService.getHost() + 'productos/search/:textSearch.json'
         }
     });
 });
