@@ -21,15 +21,19 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12">
-            <ul class="pull-right" uib-pagination total-items="pagination.totalItems" first-text="<<" 
+        <div class="col-sm-6">
+            <h2>Productos</h2>
+        </div>
+        <div class="col-sm-6">
+            <ul class="pull-right pagination-sm" uib-pagination total-items="pagination.totalItems" first-text="<<" 
                 last-text=">>" next-text=">" previous-text="<"
                 items-per-page="pagination.itemsPerPage" ng-model="page" 
-                class="pagination-sm" boundary-links="true" force-ellipses="true"
+                boundary-links="true" force-ellipses="true"
                 ng-change="pageChanged()">
             </ul>
         </div>
     </div>
+    <hr>
     <div class="row">
         <div class="col-sm-3 producto" ng-repeat="producto in productos">
             <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">
@@ -41,13 +45,20 @@
     <br>
     <div class="row">
         <div class="col-sm-12">
-            <ul class="pull-right" uib-pagination total-items="pagination.totalItems" first-text="<<" 
+            <ul class="pull-right pagination-sm" uib-pagination total-items="pagination.totalItems" first-text="<<" 
                 last-text=">>" next-text=">" previous-text="<"
                 items-per-page="pagination.itemsPerPage" ng-model="page" 
-                class="pagination-sm" boundary-links="true" force-ellipses="true"
+                boundary-links="true" force-ellipses="true"
                 ng-change="pageChanged()">
             </ul>
         </div>
+    </div>
+    <h4>Sub Categorías</h4>
+    <hr>
+    <div class="list-group">
+        <a ui-sref="category({ category_id: child.id })" class="list-group-item" ng-repeat="child in category.children">
+            {{ child.descripcion }}
+        </a>
     </div>
 </div>
 <div class="dv-separator"></div>
