@@ -1,14 +1,15 @@
-<div class="with-bg" ng-if="infosSearch !== undefined">
+<div class="with-bg animated fadeIn" ng-if="infosSearch !== undefined">
     <picture picturefill>
         <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgSearchSrc(infosSearch.bg_search, '_small') }}">
         <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgSearchSrc(infosSearch.bg_search, '_large') }}">
         <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
         <img class="img-responsive bg" ng-src="{{ getBgSearchSrc(infosSearch.bg_search, '_large') }}">
     </picture>
-    <div class="container">
-        <h2 class="text-center">Buscar</h2>
-        <hr>
-        <h4 class="text-center">{{ infosSearch.search_text }}</h4>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h2 class="text-center">Buscar</h2>
+            <h4 class="text-center">{{ infosSearch.search_text }}</h4>
+        </div>
     </div>
 </div>
 <div class="container-fluid">
@@ -33,14 +34,15 @@
     <hr class="searchHr">
     <h3>Productos</h3>
     <div class="list-group">
-        <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })" class="list-group-item" ng-repeat="producto in productosSearch">
+        <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })" class="list-group-item animated fadeIn" ng-repeat="producto in productosSearch">
             <h4 class="list-group-item-heading">{{ producto.descripcion }}</h4>
             <p class="list-group-item-text"><span ng-bind-html="producto.detalle | limitTo: 90"></span><span ng-if="producto.detalle.length > 90">...</span></p>
         </a>
     </div>
+    <hr>
     <h3>Categorías</h3>
     <div class="list-group">
-        <a ui-sref="category({ category_id: category.id })" class="list-group-item" ng-repeat="category in categoriesSearch">
+        <a ui-sref="category({ category_id: category.id })" class="list-group-item animated fadeIn" ng-repeat="category in categoriesSearch">
             <h4 class="list-group-item-heading">{{ category.descripcion }}</h4>
             <p class="list-group-item-text"><span ng-bind-html="category.resumen | limitTo: 90"></span><span ng-if="category.resumen.length > 90">...</span></p>
         </a>

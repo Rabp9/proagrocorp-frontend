@@ -101,7 +101,7 @@ angular
     noticiasservice,*/ $q) {
     $rootScope.pathLocation = envService.getHost();
     
-    var search = ['logo', 'descripcion', 'nosotros', 'copyright'];
+    var search = ['logo', 'nosotros', 'copyright'];
     
     $rootScope.init = function() {
         $q.all([

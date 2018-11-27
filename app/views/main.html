@@ -1,5 +1,5 @@
 <div uib-carousel class="carousel-fade" interval="myInterval" no-wrap="noWrapSlides" active="0">
-    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slides.indexOf(slide)">
+    <div class="animated fadeIn" uib-slide ng-repeat="slide in slides track by slide.id" index="slides.indexOf(slide)">
         <picture picturefill>
             <source media='(max-width: 767px)' ng-attr-srcset="{{ getSlideSrc(slide, '_small') }}">
             <source media='(min-width: 767px)' ng-attr-srcset="{{ getSlideSrc(slide, '_large') }}">
@@ -61,7 +61,8 @@
         </picture>
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
-                <h3 style="text-align: center;">Global Agro, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et pellentesque risus, bibendum commodo ligula. Ut vitae elit massa.</h3>
+                <h3 style="text-align: center;" ng-bind-html="infos.descripcion">
+                </h3>
             </div>
         </div>
     </div>

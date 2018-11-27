@@ -29,6 +29,8 @@ angular.module('proagrocorpFrontendApp')
     
     $scope.searchText = function(textSearch, boton) {
         $utilsViewService.disable('#' + boton);
+        $scope.productosSearch = [];
+        $scope.categoriesSearch = [];
         
         $scope.loading = true;
         $scope.progressbar.start();

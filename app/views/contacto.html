@@ -1,14 +1,15 @@
-<div class="with-bg" ng-if="infosContacto !== undefined">
+<div class="with-bg animated fadeIn" ng-if="infosContacto !== undefined">
     <picture picturefill>
         <source media='(max-width: 767px)' ng-attr-srcset="{{ getBgContactoSrc(infosContacto.bg_contacto, '_small') }}">
         <source media='(min-width: 767px)' ng-attr-srcset="{{ getBgContactoSrc(infosContacto.bg_contacto, '_large') }}">
         <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
         <img class="img-responsive bg" ng-src="{{ getBgContactoSrc(infosContacto.bg_contacto, '_large') }}">
     </picture>
-    <div class="container">
-        <h2 class="text-center">Contacto</h2>
-        <hr>
-        <h4 class="text-center">Deja tu consulta, te atenderemos pronto.</h4>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h2 class="text-center">Contacto</h2>
+            <h4 class="text-center">Deja tu consulta, te atenderemos pronto.</h4>
+        </div>
     </div>
 </div>
 <br>
@@ -50,7 +51,7 @@
             </form>
         </div>
         <div class="col-sm-5">
-            <div ng-if="infosContacto !== undefined">
+            <div class="animated fadeIn" ng-if="infosContacto !== undefined">
                 <picture picturefill>
                     <source media='(max-width: 767px)' ng-attr-srcset="{{ getContactoImageSrc(infosContacto.contacto_image, '_small') }}">
                     <source media='(min-width: 767px)' ng-attr-srcset="{{ getContactoImageSrc(infosContacto.contacto_image, '_large') }}">

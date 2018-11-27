@@ -9,15 +9,17 @@
         </li>
         <li>{{ category.descripcion }}</li>
     </ol>
-    <div class="with-bg" ng-if="category.portada !== undefined">
+    <div class="with-bg animated fadeIn" ng-if="category.portada !== undefined">
         <picture picturefill>
             <source media='(max-width: 767px)' ng-attr-srcset="{{ getCategoriesSrc(category, '_small') }}">
             <source media='(min-width: 767px)' ng-attr-srcset="{{ getCategoriesSrc(category, '_large') }}">
             <img class="img-responsive bg" ng-src="{{ getCategoriesSrc(category, '_large') }}">
         </picture>
-        <div class="container">
-            <h2 class="text-center">{{ category.descripcion }}</h2>
-            <h4 class="text-center" ng-bind-html="category.resumen"></h4>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2 class="text-center">{{ category.descripcion }}</h2>
+                <h4 class="text-center" ng-bind-html="category.resumen"></h4>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -35,7 +37,7 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-sm-3 producto" ng-repeat="producto in productos">
+        <div class="col-sm-3 producto animated fadeIn" ng-repeat="producto in productos">
             <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">
                 <img class="img-responsive hvr-grow" src="https://picsum.photos/600/300/?image=0" />
                 <h3>{{ producto.descripcion }}</h3>
@@ -55,7 +57,7 @@
     </div>
     <h4>Sub Categorías</h4>
     <hr>
-    <div class="list-group">
+    <div class="list-group animated fadeIn">
         <a ui-sref="category({ category_id: child.id })" class="list-group-item" ng-repeat="child in category.children">
             {{ child.descripcion }}
         </a>
