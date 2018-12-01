@@ -44,6 +44,7 @@ angular.module('proagrocorpFrontendApp')
         $scope.loading = true;
         $scope.page = 1;
         $scope.items_per_page = 20;
+        $scope.productos = [];
         $scope.getCategories().then(function(category_id) {
             $scope.getProductos(category_id);
         });

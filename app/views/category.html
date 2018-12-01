@@ -37,7 +37,8 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-sm-3 producto animated fadeIn" ng-repeat="producto in productos">
+        <div class="text-center" ng-show="productos.length === 0"><img src="images/loading.gif" style="width: 120px;"/></div>
+        <div ng-hide="productos.length === 0" class="col-sm-3 producto animated fadeIn" ng-repeat="producto in productos">
             <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">
                 <img class="img-responsive hvr-grow" src="https://picsum.photos/600/300/?image=0" />
                 <h3>{{ producto.descripcion }}</h3>
@@ -58,7 +59,8 @@
     <h4>Sub Categorías</h4>
     <hr>
     <div class="list-group animated fadeIn">
-        <a ui-sref="category({ category_id: child.id })" class="list-group-item" ng-repeat="child in category.children">
+        <div class="text-center" ng-show="productos.length === 0"><img src="images/loading.gif" style="width: 120px;"/></div>
+        <a ng-hide="productos.length === 0" ui-sref="category({ category_id: child.id })" class="list-group-item" ng-repeat="child in category.children">
             {{ child.descripcion }}
         </a>
     </div>
