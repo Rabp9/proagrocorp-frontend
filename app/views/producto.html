@@ -4,7 +4,7 @@
         <li ng-if="producto.category.parent_categories1.parent_categories2 !== undefined">
             {{ producto.category.parent_categories1.parent_categories2.descripcion }}
         </li>
-        <li ng-if="producto.category.parent_categories1 !== undefined">
+        <li ng-if="producto.category.parent_categories1 !== null">
             {{ producto.category.parent_categories1.descripcion }}
         </li>
         <li>{{ producto.descripcion }}</li>
@@ -13,20 +13,20 @@
         <div class="col-sm-6">
             <img class="img-responsive"
                 ez-plus 
-                ezp-model="{thumb:IMGPATH, small:IMGPATH, large:IMGPATH}"
+                ezp-model="{thumb: image, small: image, large: image}"
                 ezp-options="{scrollZoom: true, easing: true}"
                 id="zoom_01" 
-                src='https://picsum.photos/600/300/?image=0' 
-                data-zoom-image='https://picsum.photos/2400/1200/?image=0' />
+                src='{{ image }}' 
+                data-zoom-image='https://picsum.photos/600/300/?image=0' />
             <a ng-click="share(producto)" title="Compartir en Facebook"><img ng-src="images/fb.svg" class="social-network-icon"></a>
             <a ng-click="share(producto)" title="Compartir en Twitter"><img ng-src="images/tw.svg" class="social-network-icon"></a>
         </div>
         <div class="col-sm-6">
-            <h2>Titulo</h2>
-            <p>Detalle 1</p>
-            <p>Detalle 2</p>
+            <h2 ng-bind-html="producto.descripcion"></h2>
+            <p ng-bind-html="producto.nombre2">Detalle 1</p>
+            <p ng-bind-html="producto.nombre3">Detalle 2</p>
             <div class="text-justify">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus erat vitae sapien elementum, sit amet bibendum quam accumsan. Vestibulum vel posuere massa, eu dapibus elit. Proin eleifend vehicula diam, nec placerat sem gravida sit amet. Fusce eu dolor libero. Nam sit amet erat sed nisi tincidunt porttitor at in lacus. Morbi sit amet orci a risus pretium pharetra. Sed imperdiet faucibus faucibus. Duis dignissim mi fermentum quam suscipit, nec tincidunt odio viverra. Sed cursus sed ante ut consectetur. Proin dapibus a sem quis dignissim. Ut dictum quam quis massa hendrerit, blandit dignissim ligula ultrices. Maecenas pellentesque in nisl non porta.</p>
+                <p ng-bind-html="producto.detalle"></p>
             </div>
             <a class="btn btn-default"><span class="glyphicon glyphicon-download-alt"></span> Ficha Técnica</a>
         </div>

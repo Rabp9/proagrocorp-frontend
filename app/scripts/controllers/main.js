@@ -19,8 +19,10 @@ angular.module('proagrocorpFrontendApp')
     var search = ['bg_descripcion', 'video', 'descripcion'];
    
     $scope.init = function() {
+        $scope.slides = [];
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
+        $scope.loading = true;
         return $q.all([
             slidesService.get().$promise,
             categoriesService.get({estado_id: 1}).$promise,
@@ -31,6 +33,7 @@ angular.module('proagrocorpFrontendApp')
             $scope.categories = data[1].categories;
             $scope.productos = data[2].productos;
             $scope.infos = data[3].infos;
+            $scope.loading = false;
             
             for (var i = 0; i < $scope.categories.length; i++) {
                 $scope.categories[i].col = 'col-sm-6';

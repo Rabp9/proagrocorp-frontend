@@ -13,6 +13,7 @@
     </div>
 </div>
 <br>
+<div class="text-center" ng-show="infosContacto === undefined"><img src="images/loading.gif" alt="cargando" style="width: 120px;"/></div>
 <div class="container">
     <div class="row">
         <div class="alert alert-dismissible" ng-class="{'alert-success': message.code === 200, 'alert-danger': message.code !== 200 }" role="alert" ng-show="message.code !== undefined">
@@ -20,7 +21,7 @@
             {{ message.message }} 
         </div>
         <div class="col-sm-7">
-            <form novalidate angular-validator angular-validator-submit="send(mensaje, 'btnSendMensaje')" name="MensajeSend">
+            <form ng-if="infosContacto !== undefined" novalidate angular-validator angular-validator-submit="send(mensaje, 'btnSendMensaje')" name="MensajeSend">
                 <div class="row">
                     <div class="form-group-sm col-sm-8">
                         <label for="txtNombres">Nombres</label>
