@@ -9,7 +9,8 @@
         </li>
         <li>{{ producto.descripcion }}</li>
     </ol>
-    <div class="row">
+    <div class="text-center" ng-show="loading === true"><img src="images/loading.gif" alt="cargando" style="width: 120px;"/></div>
+    <div class="row" ng-show="loading !== true">
         <div class="col-sm-6">
             <img class="img-responsive"
                 ez-plus 
@@ -28,13 +29,14 @@
             <div class="text-justify">
                 <p ng-bind-html="producto.detalle"></p>
             </div>
-            <a class="btn btn-default"><span class="glyphicon glyphicon-download-alt"></span> Ficha Técnica</a>
+            <a class="btn btn-default" target="_blank" ng-href="{{ fichaTecnica }}"><span class="glyphicon glyphicon-download-alt"></span> Ficha Técnica</a>
         </div>
     </div>
 </div>
 <br>
 <div class="container">
-    <h3>Productos Relacionados</h3>
+    <h3 ng-if="productosRelacionados.length">Productos Relacionados</h3>
+    <div class="text-center" ng-show="loading === true"><img src="images/loading.gif" alt="cargando" style="width: 120px;"/></div>
     <slick ng-if="productosRelacionados.length" infinite="true" speed="300" slides-to-show="5">
         <div ng-repeat="productoRelacionado in productosRelacionados">
             <div class="image">

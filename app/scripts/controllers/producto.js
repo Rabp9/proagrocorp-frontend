@@ -27,6 +27,7 @@ angular.module('proagrocorpFrontendApp')
             }, function(data) {
                 $scope.producto = data.producto;
                 $scope.image = $rootScope.pathLocation + 'img/productos/' + $scope.producto.imagen;
+                $scope.fichaTecnica = $rootScope.pathLocation + 'files/fichas/' + $scope.producto.fichaTecnica;
                 var imagen = 'img/productos/' + $scope.producto.portada;
                 $rootScope.title = $scope.producto.descripcion;
                 $rootScope.opTitle = $scope.producto.descripcion;
