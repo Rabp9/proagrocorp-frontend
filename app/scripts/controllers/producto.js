@@ -58,14 +58,13 @@ angular.module('proagrocorpFrontendApp')
     $scope.share = function(producto) {
         var url = 'http://' +
             window.location.hostname +
-            ':' +
-            window.location.port +
             '/' +
             window.location.hash;
+        $rootScope.opTitle = 'prueba producto';
         Socialshare.share({
             'provider': 'facebook',
             'attrs': {
-                'socialshareUrl': 'http://robertobocanegra.com/fb2.html'
+                'socialshareUrl': url
             }
         });
     };

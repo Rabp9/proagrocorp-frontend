@@ -47,7 +47,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,NULL,'dsada','category-zpBvlBiG.png','asdasdas','<p>sdada</p>',1,2,1);
+INSERT INTO `categories` VALUES (1,NULL,'adas','category-RJd8mT0s.jpg','dsada as da','<p>&nbsp;dad adada</p>',1,2,1);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -147,7 +147,7 @@ CREATE TABLE `infos` (
   `tipo` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `descripcion_UNIQUE` (`descripcion`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,7 +157,7 @@ CREATE TABLE `infos` (
 
 LOCK TABLES `infos` WRITE;
 /*!40000 ALTER TABLE `infos` DISABLE KEYS */;
-INSERT INTO `infos` VALUES (1,'logo',NULL,'image'),(2,'descripcion',NULL,'text'),(3,'video',NULL,'url'),(4,'copyright',NULL,'text'),(5,'nosotros',NULL,'textarea'),(6,'bg_descripcion',NULL,'image'),(7,'nosotros_body','<div class=\"container nosotros\">','textarea'),(8,'bg_nosotros',NULL,'image'),(9,'bg_contacto','bg_contacto-wEPi2Of5.png','image');
+INSERT INTO `infos` VALUES (1,'logo',NULL,'image'),(2,'descripcion',NULL,'text'),(3,'video',NULL,'url'),(4,'copyright',NULL,'text'),(5,'nosotros',NULL,'textarea'),(6,'bg_descripcion',NULL,'image'),(7,'nosotros_body','<div class=\"container nosotros\">','textarea'),(8,'bg_nosotros',NULL,'image'),(9,'bg_contacto',NULL,'image'),(10,'contacto_image',NULL,'image'),(11,'bg_search',NULL,'image'),(12,'search_text',NULL,'text');
 /*!40000 ALTER TABLE `infos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,6 +207,7 @@ CREATE TABLE `productos` (
   `detalle` text NOT NULL,
   `imagen` varchar(60) NOT NULL,
   `slug` varchar(30) NOT NULL,
+  `fichaTecnica` varchar(30) DEFAULT NULL,
   `estado_id` int(11) NOT NULL,
   PRIMARY KEY (`id`,`category_id`,`estado_id`),
   KEY `fk_productos_estados1_idx` (`estado_id`),
@@ -223,7 +224,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,1,'fghgd','gfh','dhgdh','<p>gfhghdf ghg gh</p>','producto-Ttdj21Zg.png','fghgd',1);
+INSERT INTO `productos` VALUES (1,1,'dasd as d','as dasdas','d ad as','<p>dsa das a dadas</p>','producto-79CeJOjM.jpg','dasd-as-d','fichaTecnica-ymZYWh6f.pdf',1);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,4 +334,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-25 10:22:08
+-- Dump completed on 2018-12-03 20:08:06

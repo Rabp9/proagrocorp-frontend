@@ -24,9 +24,10 @@ angular
     'ezplus',
     'ngYoutubeEmbed',    
     'angularValidator',
-    '720kb.socialshare'
+    '720kb.socialshare',
+    'ngMeta'
 ])
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, ngMetaProvider) {
     var mainState = {
         name: 'main',
         url: '/',
@@ -68,6 +69,7 @@ angular
     };
     
     var productoState = {
+        abstract: true,
         name: 'producto',
         url: '/category/{category_id}/producto/{producto_id}/{slug}',
         templateUrl: 'views/producto.html',
@@ -76,6 +78,11 @@ angular
         params: {
             id: {
                 value: '1'
+            }
+        },
+        data: {
+            meta: {
+                'og:title': 'producto probar'
             }
         }
     };
@@ -96,9 +103,12 @@ angular
     $stateProvider.state(categoryState);
     $stateProvider.state(searchState);
     $urlRouterProvider.when('', '/');
+
+    $stateProvider.decorator('data', ngMetaProvider.mergeNestedStateData);
 })
 .run(function($rootScope, $state, $window, /*$sce,*/ envService, infosService, linksService, categoriesService, /*serviciosservice,
-    noticiasservice,*/ $q) {
+    noticiasservice,*/ $q, ngMeta) {
+    ngMeta.init();
     $rootScope.pathLocation = envService.getHost();
     
     var search = ['logo', 'nosotros', 'copyright'];
