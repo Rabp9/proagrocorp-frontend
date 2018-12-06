@@ -27,7 +27,7 @@ angular
     '720kb.socialshare',
     'ngMeta'
 ])
-.config(function($stateProvider, $urlRouterProvider, ngMetaProvider) {
+.config(function($stateProvider, $urlRouterProvider, ngMetaProvider, $locationProvider) {
     var mainState = {
         name: 'main',
         url: '/',
@@ -69,7 +69,6 @@ angular
     };
     
     var productoState = {
-        abstract: true,
         name: 'producto',
         url: '/category/{category_id}/producto/{producto_id}/{slug}',
         templateUrl: 'views/producto.html',
@@ -78,11 +77,6 @@ angular
         params: {
             id: {
                 value: '1'
-            }
-        },
-        data: {
-            meta: {
-                'og:title': 'producto probar'
             }
         }
     };
@@ -103,6 +97,7 @@ angular
     $stateProvider.state(categoryState);
     $stateProvider.state(searchState);
     $urlRouterProvider.when('', '/');
+    $locationProvider.html5Mode(true);
 
     $stateProvider.decorator('data', ngMetaProvider.mergeNestedStateData);
 })
