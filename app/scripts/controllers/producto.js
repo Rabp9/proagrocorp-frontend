@@ -60,6 +60,7 @@ angular.module('proagrocorpFrontendApp')
             window.location.hostname +
             '/' +
             window.location.hash;
+        url = 'http://proagrocorp.robertobocanegra.com/' + 'album/1';
         $rootScope.opTitle = 'prueba producto';
         Socialshare.share({
             'provider': 'facebook',

@@ -437,6 +437,14 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/scripts/',
           src: 'langs_tinymce/*',
           dest: '<%= yeoman.dist %>/scripts/'
+        }, {
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '<%= yeoman.dist %>',
+          src: [
+            'uib/**'
+          ]
         }]
       },
       styles: {
