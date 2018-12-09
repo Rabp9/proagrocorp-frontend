@@ -9,7 +9,7 @@
  */
 angular.module('proagrocorpFrontendApp')
 .controller('ProductoCtrl', function ($scope, $state, ngProgressFactory, productosService,
-    $rootScope, $q, $sce, imgResponsiveFilter, Socialshare) {
+    $rootScope, $q, $sce, imgResponsiveFilter, Socialshare, $location) {
         
     $scope.init = function() {
         $scope.loading = true;
@@ -55,15 +55,20 @@ angular.module('proagrocorpFrontendApp')
         return $sce.trustAsResourceUrl(imgResponsiveFilter(src, size));
     };
     
-    $scope.share = function(producto) {
-        var url = 'http://' +
-            window.location.hostname +
-            '/' +
-            window.location.hash;
-        url = 'http://proagrocorp.robertobocanegra.com/' + 'album/1';
-        $rootScope.opTitle = 'prueba producto';
+    $scope.shareFb = function(producto) {
+        var url = $location.absUrl();
         Socialshare.share({
             'provider': 'facebook',
+            'attrs': {
+                'socialshareUrl': url
+            }
+        });
+    };
+    
+    $scope.shareTw = function(producto) {
+        var url = $location.absUrl();
+        Socialshare.share({
+            'provider': 'twitter',
             'attrs': {
                 'socialshareUrl': url
             }

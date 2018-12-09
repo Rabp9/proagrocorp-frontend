@@ -24,10 +24,9 @@ angular
     'ezplus',
     'ngYoutubeEmbed',    
     'angularValidator',
-    '720kb.socialshare',
-    'ngMeta'
+    '720kb.socialshare'
 ])
-.config(function($stateProvider, $urlRouterProvider, ngMetaProvider, $locationProvider) {
+.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     var mainState = {
         name: 'main',
         url: '/',
@@ -98,12 +97,10 @@ angular
     $stateProvider.state(searchState);
     $urlRouterProvider.when('', '/');
     $locationProvider.html5Mode(true);
-
-    $stateProvider.decorator('data', ngMetaProvider.mergeNestedStateData);
 })
 .run(function($rootScope, $state, $window, /*$sce,*/ envService, infosService, linksService, categoriesService, /*serviciosservice,
-    noticiasservice,*/ $q, ngMeta) {
-    ngMeta.init();
+    noticiasservice,*/ $q) {
+    
     $rootScope.pathLocation = envService.getHost();
     
     var search = ['logo', 'nosotros', 'copyright'];

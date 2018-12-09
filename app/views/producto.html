@@ -19,13 +19,12 @@
                 id="zoom_01" 
                 src='{{ image }}' 
                 data-zoom-image='https://picsum.photos/600/300/?image=0' />
-            <a ng-click="share(producto)" title="Compartir en Facebook"><img ng-src="images/fb.svg" class="social-network-icon"></a>
-            <a ng-click="share(producto)" title="Compartir en Twitter"><img ng-src="images/tw.svg" class="social-network-icon"></a>
+            <a class="rsLink" ng-click="shareFb(producto)" title="Compartir en Facebook"><img ng-src="images/fb.svg" class="social-network-icon"></a>
+            <a class="rsLink" ng-click="shareTw(producto)" title="Compartir en Twitter"><img ng-src="images/tw.svg" class="social-network-icon"></a>
         </div>
         <div class="col-sm-6">
             <h2 ng-bind-html="producto.descripcion"></h2>
-            <p ng-bind-html="producto.nombre2">Detalle 1</p>
-            <p ng-bind-html="producto.nombre3">Detalle 2</p>
+            <p><b>Otros nombres:</b> {{ producto.nombre2 }}, {{ producto.nombre3 }}</p>
             <div class="text-justify">
                 <p ng-bind-html="producto.detalle"></p>
             </div>
