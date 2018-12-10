@@ -44,7 +44,7 @@
                 </li>
             </ul>
         </div>
-        <div class="navbar navbar-default menu-principal" role="navigation">
+        <div id="mmNav" class="navbar navbar-default menu-principal" role="navigation">
             <div class="container">
                 <div class="navbar-header">
 
@@ -55,14 +55,21 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" ui-sref="main"><img class="img-responsive" ng-src="images/logo.jpg"></a>
+                    <a class="navbar-brand" ui-sref="main" ng-if="infosIndex !== undefined">
+                        <picture picturefill>
+                            <source media='(max-width: 767px)' ng-attr-srcset="{{ getLogoSrc(infosIndex.logo, '_small') }}">
+                            <source media='(min-width: 767px)' ng-attr-srcset="{{ getLogoSrc(infosIndex.logo, '_large') }}">
+                            <!--<img ng-show="{{ infos.bg_descripcion !== null }}" class="img-responsive bg"  ng-src="{{ getBgSrc(infos.bg_descripcion, '_large') }}">-->
+                            <img class="img-responsive" ng-src="{{ getLogoSrc(infosIndex.logo, '_large') }}">
+                        </picture>
+                    </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="js-navbar-collapse">
-                    <ul class="nav navbar-nav pull-right">
-                        <li class="active"><a ui-sref="main">INICIO</a></li>
+                    <ul class="nav navbar-nav">
+                        <li ui-sref-active="active"><a ui-sref="main">INICIO</a></li>
                         
-                        <li ng-repeat="category in categories">
+                        <li ui-sref-active="active" ng-repeat="category in categories">
                             <a ng-if="category.children.length == 0" ui-sref="category({ category_id: category.id })">{{ category.descripcion }}</a>
                             
                             <a ng-if="category.children.length > 0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ category.descripcion }}</a>
@@ -79,8 +86,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a ui-sref="nosotros">NOSOTROS</a></li>
-                        <li><a ui-sref="contacto">CONTACTO</a></li>
+                        <li ui-sref-active="active"><a ui-sref="nosotros">NOSOTROS</a></li>
+                        <li ui-sref-active="active"><a ui-sref="contacto">CONTACTO</a></li>
                     </ul>
                 </div>
             </div>

@@ -98,8 +98,7 @@ angular
     $urlRouterProvider.when('', '/');
     $locationProvider.html5Mode(true);
 })
-.run(function($rootScope, $state, $window, /*$sce,*/ envService, infosService, linksService, categoriesService, /*serviciosservice,
-    noticiasservice,*/ $q) {
+.run(function($rootScope, $state, $window,envService, infosService, linksService, categoriesService, $q, $sce, imgResponsiveFilter) {
     
     $rootScope.pathLocation = envService.getHost();
     
@@ -111,36 +110,37 @@ angular
              linksService.getHeader().$promise,
              linksService.getFooter().$promise,
              categoriesService.get().$promise
-             //noticiasservice.getSome({amount: 3}).$promise
         ]).then(function(data) {
             $rootScope.infosIndex = data[0].infos;
             $rootScope.linksHeader = data[1].linksHeader;
             $rootScope.linksFooter = data[2].linksFooter;
             $rootScope.categories = data[3].categories;
-            /*$rootScope.servicios_index = data[1].servicios;
-            $rootScope.noticias_index = data[2].noticias;*/
         });
     };
     
     $rootScope.$on('$stateChangeSuccess', function(event, toParams, fromState, fromParams) {
         $rootScope.title = $state.current.title;
         $window.scrollTo(0, 0);
+
+        var openedMenu = $('#js-navbar-collapse').hasClass('in');
+        
+        var mq = window.matchMedia('(max-width: 767px)');
+        if (mq.matches && openedMenu) {
+            $('.navbar-toggle').click();
+        }
     });
     
     $rootScope.search = function(textSearch) {
         $state.go('search', {textSearch: textSearch});
     };
-    /*
-    $('#mmNav a').click(function() {
-        $('.dropdown.open').removeClass('open');
-    });
     
-    var mq = window.matchMedia('(max-width: 767px)');
-    $('.nav a[ui-sref]').on('click', function() {
-        if (mq.matches) {
-            $('.navbar-toggle').click();
-        }
-    });
+    $rootScope.getLogoSrc = function(logo, size) {
+        var src = $rootScope.pathLocation + 'img/infos/' + logo;
+        return $sce.trustAsResourceUrl(imgResponsiveFilter(src, size));
+    };
+    
+    /*
+     * 
         
     $rootScope.trustAsHtml = function(string) {
         return $sce.trustAsHtml(string);

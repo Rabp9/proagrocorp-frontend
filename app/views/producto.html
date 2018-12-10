@@ -1,6 +1,6 @@
 <div class="container">
     <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
+        <li><a ui-sref="main">Home</a></li>
         <li ng-if="producto.category.parent_categories1.parent_categories2 !== undefined">
             {{ producto.category.parent_categories1.parent_categories2.descripcion }}
         </li>
@@ -12,20 +12,29 @@
     <div class="text-center" ng-show="loading === true"><img src="images/loading.gif" alt="cargando" style="width: 120px;"/></div>
     <div class="row" ng-show="loading !== true">
         <div class="col-sm-6">
-            <img class="img-responsive"
+            <img class="img-responsive hidden-xs"
                 ez-plus 
                 ezp-model="{thumb: image, small: image, large: image}"
                 ezp-options="{scrollZoom: true, easing: true}"
                 id="zoom_01" 
                 src='{{ image }}' 
                 data-zoom-image='https://picsum.photos/600/300/?image=0' />
+            <img class="img-responsive hidden-sm hidden-md hidden-lg" ng-src="{{ image }}" alt="{{ producto.descripcion }}" />
             <a class="rsLink" ng-click="shareFb(producto)" title="Compartir en Facebook"><img ng-src="images/fb.svg" class="social-network-icon"></a>
             <a class="rsLink" ng-click="shareTw(producto)" title="Compartir en Twitter"><img ng-src="images/tw.svg" class="social-network-icon"></a>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 hidden-xs">
             <h2 ng-bind-html="producto.descripcion"></h2>
             <p><b>Otros nombres:</b> {{ producto.nombre2 }}, {{ producto.nombre3 }}</p>
             <div class="text-justify">
+                <p ng-bind-html="producto.detalle"></p>
+            </div>
+            <a class="btn btn-default" target="_blank" ng-href="{{ fichaTecnica }}"><span class="glyphicon glyphicon-download-alt"></span> Ficha Técnica</a>
+        </div>
+        <div class="col-sm-6 hidden-sm hidden-md hidden-lg text-center">
+            <h2 ng-bind-html="producto.descripcion"></h2>
+            <p><b>Otros nombres:</b> {{ producto.nombre2 }}, {{ producto.nombre3 }}</p>
+            <div class="text-center">
                 <p ng-bind-html="producto.detalle"></p>
             </div>
             <a class="btn btn-default" target="_blank" ng-href="{{ fichaTecnica }}"><span class="glyphicon glyphicon-download-alt"></span> Ficha Técnica</a>

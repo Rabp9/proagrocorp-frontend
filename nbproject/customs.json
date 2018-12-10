@@ -31,6 +31,9 @@
         },
         "ui-sref": {
             "context": "a"
+        },
+        "ui-sref-active": {
+            "context": "li"
         }
     }
 }
