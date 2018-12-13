@@ -55,6 +55,11 @@ angular.module('proagrocorpFrontendApp')
         return $sce.trustAsResourceUrl(imgResponsiveFilter(src, size));
     };
     
+    $scope.getProductosSrc = function(producto, size) {
+        var src = $rootScope.pathLocation + 'img/productos/' + producto.imagen;
+        return $sce.trustAsResourceUrl(imgResponsiveFilter(src, size));
+    };
+    
     $scope.pageChanged = function() {
         $scope.getProductos($scope.category.id);
     };

@@ -34,7 +34,7 @@
 </div>
 <div class="container-fluid">
     <slick ng-if="productos.length" infinite="true" speed="300" slides-to-show="5">
-        <div ng-repeat="producto in productos">
+        <div ng-repeat="producto in productos" style="">
             <div class="image">
                 <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">
                     <picture picturefill>

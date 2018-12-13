@@ -41,7 +41,11 @@
         <div class="text-center" ng-show="productos.length === 0 && loading === false">No se encontraron productos</div>
         <div ng-show="productos.length !== 0" class="col-sm-3 producto animated fadeIn" ng-repeat="producto in productos">
             <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">
-                <img class="img-responsive hvr-grow" src="https://picsum.photos/600/300/?image=0" />
+                <picture picturefill>
+                    <source media='(max-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_small') }}">
+                    <source media='(min-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_large') }}">
+                    <img class="img-responsive" ng-src="{{ getProductosSrc(producto, '_large') }}">
+                </picture>
                 <h3>{{ producto.descripcion }}</h3>
             </a>
         </div>
