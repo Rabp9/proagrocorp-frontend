@@ -52,7 +52,7 @@
                     <picture picturefill>
                         <source media='(max-width: 767px)' ng-attr-srcset="{{ getProductosSrc(productoRelacionado, '_small') }}">
                         <source media='(min-width: 767px)' ng-attr-srcset="{{ getProductosSrc(productoRelacionado, '_large') }}">
-                        <img class="img-responsive" ng-src="{{ getProductosSrc(productoRelacionado, '_large') }}">
+                        <img style="height: 150px;" class="img-responsive" ng-src="{{ getProductosSrc(productoRelacionado, '_large') }}">
                     </picture>
                 </a>
                 <h4 class="text-center"><a ui-sref="producto({ category_id: productoRelacionado.category_id, producto_id: productoRelacionado.id, slug: productoRelacionado.slug })">{{ productoRelacionado.descripcion }}</a></h4>

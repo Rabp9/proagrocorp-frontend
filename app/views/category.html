@@ -40,14 +40,16 @@
         <div class="text-center" ng-show="productos.length === 0 && loading === true"><img src="images/loading.gif" alt="cargando" style="width: 120px;"/></div>
         <div class="text-center" ng-show="productos.length === 0 && loading === false">No se encontraron productos</div>
         <div ng-show="productos.length !== 0" class="col-sm-3 producto animated fadeIn" ng-repeat="producto in productos">
-            <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">
-                <picture picturefill>
-                    <source media='(max-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_small') }}">
-                    <source media='(min-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_large') }}">
-                    <img class="img-responsive" ng-src="{{ getProductosSrc(producto, '_large') }}">
-                </picture>
-                <h3>{{ producto.descripcion }}</h3>
-            </a>
+            <div class="image">
+                <a ui-sref="producto({ category_id: productoRelacionado.category_id, productoRelacionado productoRelacionado.id, slug: productoRelacionado.slug })">
+                    <picture picturefill>
+                        <source media='(max-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_small') }}">
+                        <source media='(min-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_large') }}">
+                        <img style="height: 150px; margin: 0 auto;" class="img-responsive" ng-src="{{ getProductosSrc(producto, '_large') }}">
+                    </picture>
+                </a>
+                <h4 class="text-center"><a ui-sref="producto({ category_id: productoRelacionado.category_id, producto_id: productoRelacionado.id, slug: productoRelacionado.slug })">{{ producto.descripcion }}</a></h4>
+            </div>
         </div>
     </div>
     <br>

@@ -34,13 +34,13 @@
 </div>
 <div class="container-fluid">
     <slick ng-if="productos.length" infinite="true" speed="300" slides-to-show="5">
-        <div ng-repeat="producto in productos" style="">
+        <div ng-repeat="producto in productos">
             <div class="image">
                 <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">
                     <picture picturefill>
                         <source media='(max-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_small') }}">
                         <source media='(min-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_large') }}">
-                        <img class="img-responsive" ng-src="{{ getProductosSrc(producto, '_large') }}">
+                        <img  style="height: 150px;" class="img-responsive" ng-src="{{ getProductosSrc(producto, '_large') }}">
                     </picture>
                 </a>
                 <h4 class="text-center"><a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">{{ producto.descripcion }}</a></h4>
