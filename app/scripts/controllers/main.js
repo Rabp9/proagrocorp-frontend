@@ -17,7 +17,7 @@ angular.module('proagrocorpFrontendApp')
     $scope.pathLocation = $rootScope.pathLocation;
     
     var search = ['bg_descripcion', 'video', 'descripcion'];
-   
+    
     $scope.init = function() {
         $scope.slides = [];
         $scope.progressbar = ngProgressFactory.createInstance();
