@@ -60,13 +60,28 @@ img.bg {
         text-decoration: none;
     }
     &.lpL {
-        padding-left: 0px;
+        @media (min-width: $screen-sm-min) {
+            padding-left: 0px;
+        }
+        @media (max-width: $screen-xs-max) {
+            margin-bottom: 5px;
+        }
     }
     &.lpR {
-        padding-right: 0px;
+        @media (min-width: $screen-sm-min) {
+            padding-right: 0px;
+        }
+        @media (max-width: $screen-xs-max) {
+            margin-bottom: 5px;
+        }
     }
     &.lpD {
-        padding-top: 30px;
+        @media (min-width: $screen-sm-min) {
+            padding-top: 30px;
+        }
+        @media (max-width: $screen-xs-max) {
+            margin-bottom: 5px;
+        }
     }
     .resumen {
         text-align: center;
