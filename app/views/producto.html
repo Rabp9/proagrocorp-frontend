@@ -42,13 +42,31 @@
     </div>
 </div>
 <br>
-<div class="container">
+<div class="container-fluid hidden-xs">
     <h3 ng-if="productosRelacionados.length">Productos Relacionados</h3>
     <div class="text-center" ng-show="loading === true"><img src="images/loading.gif" alt="cargando" style="width: 120px;"/></div>
     <slick ng-if="productosRelacionados.length" infinite="true" speed="300" slides-to-show="5">
         <div ng-repeat="productoRelacionado in productosRelacionados">
             <div class="image">
                 <a ui-sref="producto({ category_id: productoRelacionado.category_id, productoRelacionado productoRelacionado.id, slug: productoRelacionado.slug })">
+                    <picture picturefill>
+                        <source media='(max-width: 767px)' ng-attr-srcset="{{ getProductosSrc(productoRelacionado, '_small') }}">
+                        <source media='(min-width: 767px)' ng-attr-srcset="{{ getProductosSrc(productoRelacionado, '_large') }}">
+                        <img style="height: 150px;" class="img-responsive" ng-src="{{ getProductosSrc(productoRelacionado, '_large') }}">
+                    </picture>
+                </a>
+                <h4 class="text-center"><a ui-sref="producto({ category_id: productoRelacionado.category_id, producto_id: productoRelacionado.id, slug: productoRelacionado.slug })">{{ productoRelacionado.descripcion }}</a></h4>
+            </div>
+        </div>
+    </slick>
+</div>
+<div class="container-fluid hidden-sm hidden-lg hidden-md">
+    <h3 ng-if="productosRelacionados.length">Productos Relacionados</h3>
+    <div class="text-center" ng-show="loading === true"><img src="images/loading.gif" alt="cargando" style="width: 120px;"/></div>
+    <slick ng-if="productosRelacionados.length" infinite="true" speed="300" slides-to-show="1">
+        <div ng-repeat="productoRelacionado in productosRelacionados">
+            <div class="image">
+                <a ui-sref="producto({ category_id: productoRelacionado.category_id, producto_id: productoRelacionado.id, slug: productoRelacionado.slug })">
                     <picture picturefill>
                         <source media='(max-width: 767px)' ng-attr-srcset="{{ getProductosSrc(productoRelacionado, '_small') }}">
                         <source media='(min-width: 767px)' ng-attr-srcset="{{ getProductosSrc(productoRelacionado, '_large') }}">
