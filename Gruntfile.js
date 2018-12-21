@@ -438,6 +438,12 @@ module.exports = function (grunt) {
           src: 'langs_tinymce/*',
           dest: '<%= yeoman.dist %>/scripts/'
         }, {
+          // .htaccess
+          expand: true,
+          cwd: '<%= yeoman.app %>/',
+          src: '.htaccess',
+          dest: '<%= yeoman.dist %>/'
+        }, {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>',
