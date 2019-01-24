@@ -41,14 +41,14 @@
         <div class="text-center" ng-show="productos.length === 0 && loading === false">No se encontraron productos</div>
         <div ng-show="productos.length !== 0" class="col-sm-3 producto animated fadeIn" ng-repeat="producto in productos">
             <div class="image">
-                <a ui-sref="producto({ category_id: productoRelacionado.category_id, productoRelacionado productoRelacionado.id, slug: productoRelacionado.slug })">
+                <a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">
                     <picture picturefill>
                         <source media='(max-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_small') }}">
                         <source media='(min-width: 767px)' ng-attr-srcset="{{ getProductosSrc(producto, '_large') }}">
                         <img style="height: 150px; margin: 0 auto;" class="img-responsive" ng-src="{{ getProductosSrc(producto, '_large') }}">
                     </picture>
                 </a>
-                <h4 class="text-center"><a ui-sref="producto({ category_id: productoRelacionado.category_id, producto_id: productoRelacionado.id, slug: productoRelacionado.slug })">{{ producto.descripcion }}</a></h4>
+                <h4 class="text-center"><a ui-sref="producto({ category_id: producto.category_id, producto_id: producto.id, slug: producto.slug })">{{ producto.descripcion }}</a></h4>
             </div>
         </div>
     </div>
@@ -63,14 +63,16 @@
             </ul>
         </div>
     </div>
-    <h4>Sub Categorías</h4>
-    <hr>
-    <div class="list-group animated fadeIn">
-        <div class="text-center" ng-show="productos.length === 0 && loading === true"><img src="images/loading.gif" alt="cargando" style="width: 120px;"/></div>
-        <div class="text-center" ng-show="productos.length === 0 && loading === false">No se encontraron sub categorías</div>
-        <a ng-show="productos.length !== 0" ui-sref="category({ category_id: child.id })" class="list-group-item" ng-repeat="child in category.children">
-            {{ child.descripcion }}
-        </a>
+    <div ng-if="category.children.length !== 0">
+        <h4>Sub Categorías</h4>
+        <hr>
+        <div class="list-group animated fadeIn">
+            <div class="text-center" ng-show="productos.length === 0 && loading === true"><img src="images/loading.gif" alt="cargando" style="width: 120px;"/></div>
+            <div class="text-center" ng-show="productos.length === 0 && loading === false">No se encontraron sub categorías</div>
+            <a ng-show="productos.length !== 0" ui-sref="category({ category_id: child.id })" class="list-group-item" ng-repeat="child in category.children">
+                {{ child.descripcion }}
+            </a>
+        </div>
     </div>
 </div>
 <div class="dv-separator"></div>
