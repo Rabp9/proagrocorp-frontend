@@ -23,3 +23,10 @@
 23. mostrar info de producto desde bd-------------------------------------------
 24. en category mostrar las imagenes de los productos---------------------------
 25. en main se muestran los productos sin alinear-------------------------------
+26. al hacer click en los productos no redirigen correctamente en Category
+27. en casod e no haber sub categorias, no mostrar el texto
+28. redimensionar el espacio en el video de youtube
+29. verificar, en nosotros se ve 2 cabeceras
+30. en nosotros hay imagenes que no se ven
+31. en contacto no se ve imagen del costado
+32. en admin, no carga es.js
