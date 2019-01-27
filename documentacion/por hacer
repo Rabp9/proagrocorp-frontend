@@ -26,10 +26,10 @@
 26. al hacer click en los productos no redirigen correctamente en Category------
 27. en caso de no haber sub categorias, no mostrar el texto---------------------
 28. redimensionar el espacio en el video de youtube-----------------------------
-29. verificar, en nosotros se ve 2 cabeceras
-30. en nosotros hay imagenes que no se ven
-31. en contacto no se ve imagen del costado
-32. en admin, no carga es.js
+29. verificar, en nosotros se ve 2 cabeceras------------------------------------
+30. en nosotros hay imagenes que no se ven--------------------------------------
+31. en contacto no se ve imagen del costado-------------------------------------
+32. en admin, no carga es.js----------------------------------------------------
 33. en category frontend la imagen no tiene link--------------------------------
 34. agregar opcion de visualizar video mp4
 35. dar mas margen a productos relacionados y agregar hr en producto
