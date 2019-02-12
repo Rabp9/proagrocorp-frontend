@@ -16,7 +16,7 @@ angular.module('proagrocorpFrontendApp')
     $scope.noWrapSlides = false;
     $scope.pathLocation = $rootScope.pathLocation;
     
-    var search = ['bg_descripcion', 'video', 'descripcion'];
+    var search = ['bg_descripcion', 'video_file', 'descripcion'];
     
     $scope.init = function() {
         $scope.slides = [];
