@@ -25,7 +25,8 @@
         </div>
         <div class="col-sm-6 hidden-xs">
             <h2 ng-bind-html="producto.descripcion"></h2>
-            <p><b>Otros nombres:</b> {{ producto.nombre2 }}, {{ producto.nombre3 }}</p>
+            <p ng-if="producto.nombre2 != null"><b>Otros nombres:</b> {{ producto.nombre2 }}<span ng-if="producto.nombre3 != null">, {{ producto.nombre3 }}</span></p>
+            <p ng-if="producto.nombre2 == null && producto.nombre3 != null"><b>Otros nombres:</b> {{ producto.nombre3 }}</p>
             <div class="text-justify">
                 <p ng-bind-html="producto.detalle"></p>
             </div>
